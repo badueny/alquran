@@ -1,0 +1,274 @@
+var playerQs = new Plyr('#player');
+	function playAudio(title,audio){		
+		playerQs.source = {
+			type: 'audio',
+			title: title,
+			autoplay: true,
+			resetOnEnd:true,
+			sources: [
+				{
+				src: 'static/quran/audio/'+audio+'.m4a',
+				type: 'audio/mp3',
+				},
+			],
+		};
+	}
+
+
+$("#juzz").on("change", function(e){
+	var val = $(this).val();
+	$("#ajuzz").val(val);	
+	getSuratByJuzz(val);
+    loadList();
+});
+
+function getSuratByJuzz(val)
+{
+    $.ajax({  
+		url:baseUrl+"getSuratByJuzz",  
+		type:"GET",  
+		dataType:"JSON", 
+		data:{j:val},
+		success:function(data)  
+		{    
+			$("#surah").html(data.list).trigger("change.select2");
+			$("#asurah").val(data.no); 
+			selectListNoAyat(val,data.no);
+			val=='all' ? resetSearch() : '';            
+		}
+	});	
+}
+
+$("#surah").on("change", function(e){
+    e.preventDefault();
+    var valk = encodeHTML($("#asurah").val());
+	var s = $('#surah').val(),srh = s.split("|");              
+    $("#asurah").val(srh[0]); 
+	selectListNoAyat($("#juzz").val(),srh[0]);   
+ });
+
+ function selectListNoAyat(juzz,surah)
+ {	
+	$.ajax({  
+		url:baseUrl+"getNomorAyatByJuzzSurat",  
+		type:"GET",  
+		dataType:"JSON", 
+		data:{j:juzz,s:surah},
+		success:function(data)  
+		{    
+					
+			$("#dari").html(data.list).trigger("change.select2");
+			$("#dari").val(data.first);
+			$("#ke").html(data.list).trigger("change.select2");	
+			$("#ke").val(data.last);
+			$("#adari").val(data.first),$("#ake").val(data.last);
+            loadList();					
+		}
+	});
+ }
+
+    getSuratByJuzz($("#ajuzz").val());
+	var s = $('#surah').val(),srh = s.split("|");
+	$("#juzz").select2();
+	$("#surah").select2();
+	$("#dari").select2();
+	$("#ke").select2();
+	loadList();
+    $("#juzz").val($("#ajuzz").val()).trigger('change.select2');
+ 
+ function encodeHTML(s) {
+     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+ }
+ 
+ $("#dari").on("change", function(e){
+    e.preventDefault();
+	if(parseInt($(this).val())>parseInt($("#ke").val())){
+		$(this).val($("#ke").val()).trigger('change.select2');
+		$("#adari").val($("#ke").val())
+	}
+    var valk = encodeHTML($("#adari").val());                      
+    defaulturis = defaulturis.replace('&d='+$("#adari").val(),'');                    
+    $("#adari").val($(this).val());                      
+    loadList();
+ });
+
+ $("#ke").on("change", function(e){
+    e.preventDefault();
+	if(parseInt($(this).val())<parseInt($("#dari").val())){
+		$(this).val($("#dari").val()).trigger('change.select2');
+		$("#ake").val($("#dari").val())
+	}
+    var valk = encodeHTML($("#ake").val());                    
+    defaulturis = defaulturis.replace('&k='+$("#ake").val(),'');                    
+    $("#ake").val($(this).val());                      
+    loadList();
+ });
+
+	function resetSearch()
+	{     
+		var j = $('#juzz').val(), s = $('#surah').val(),srh = s.split("|");		
+		defaulturis = j=='all' ? '?j=all&s=1&d=1&k=7' : '?j='+j+'&s='+srh[0]+'&d=1&k='+srh[1];
+		$("#ajuzz").val(j);   	
+		$('#asurah').val(srh[0]);
+		$("#adari").val(1); 
+		$("#ake").val(srh[1]);
+	}
+                  
+ 	function upToDiv(o){$("html,body").animate({scrollTop:$("#"+o).offset().top},50)}
+       
+	function loadList()
+	{     	
+		$(".plyr--audio").hide();	     
+		var j = $('#ajuzz').val()=='' ? 'all' : $('#ajuzz').val(), s = $('#asurah').val(),
+			d = $('#adari').val()=='' ? '1' : $('#adari').val(),
+			k = $('#ake').val()=='' ? '1' : $('#ake').val();
+			defaulturis = '?j='+j+'&s='+s+'&d='+d+'&k='+k;                        
+			window.history.pushState('quran', 'Quran', defaulturis);
+            $("#dari").val(d).trigger('change.select2');
+			$("#ke").val(k).trigger('change.select2');
+		$.ajax({  
+				url:baseUrl+"getAyat",  
+				type:"GET",  
+				dataType:"TEXT", 
+				data:{j:j,s:s, d:d, k:k},
+				success:function(data)  
+				{                  
+					$('#app').html(data);
+					upToDiv("home");
+					
+				}  
+		});	
+	}
+
+	
+	
+function copyText(id,numAyah) {
+    var text = document.getElementById(id).innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+	var suratc = $("#surah option:selected").text();
+	suratc = suratc.split("(");
+	suratc = suratc[1].split("|");
+	$("#infoCopy").html("Salin <b>Ayah "+numAyah+" Surah "+suratc[0]+"</b> Sukses.<br>Silahkan Paste.");
+	$("#infoCopy").show();
+	setTimeout(hideInfoCopy, 1500);
+}
+function hideInfoCopy()
+{
+	$("#infoCopy").hide();
+}
+
+//autoscroll
+var speed = 1;
+var disp = 0;
+var handle;
+var currentspeed = 0;
+var status = 1;
+var currentpos = 0,
+    alt = 1,
+    curpos1 = 0,
+    curpos2 = -1;
+var color = new Array();
+color[1] = "#ddd";
+color[2] = "#ccc";
+color[3] = "#bbb";
+color[4] = "#aaa";
+color[5] = "#999";
+var interval = new Array(400, 300, 200, 100, 30);
+
+function scrollwindow() {
+    if (status == 1) {
+        if (document.all && !document.getElementById) temp = document.body.scrollTop;
+        else temp = window.pageYOffset;
+        if (alt == 0) alt = 2;
+        else alt = 1;
+        if (curpos1 != curpos2) {
+            if (document.all) currentpos = document.body.scrollTop + speed;
+            else currentpos = window.pageYOffset + speed;
+            window.scroll(0, currentpos);
+        } else {
+            currentpos = 0;
+            window.scroll(0, currentpos);
+        }
+    }
+}
+
+function startit(s) {
+    status = 1;
+    currentspeed = s;
+    clearInterval(handle);
+    handle = setInterval("scrollwindow()", interval[s]);
+}
+
+function stopit() {
+    currentspeed = 0;
+    for (i = 1; i <= 5; i++) {
+        document.getElementById('speed' + i).style.backgroundColor = color[i];
+    }
+    status = 0;
+}
+
+function resetBg(n) {
+    for (i = 1; i <= 5; i++) {
+        document.getElementById('speed' + i).style.backgroundColor = color[i];
+    }
+    for (i = 1; i <= currentspeed; i++) {
+        document.getElementById('speed' + i).style.backgroundColor = "#00cc00";
+    }
+}
+
+function changeBg(n) {
+    for (i = 1; i <= 5; i++) {
+        document.getElementById('speed' + i).style.backgroundColor = color[i];
+    }
+    for (i = 1; i <= n; i++) {
+        document.getElementById('speed' + i).style.backgroundColor = "#00cc00";
+    }
+}
+
+$("#autoscrl").on("click",function(){
+	tooglespeed();
+});
+disp = 0;
+document.getElementById('speednav').style.display = 'none';
+function tooglespeed() {
+    if (disp == 0) {
+        disp = 1;
+        document.getElementById('speednav').style.display = '';
+		$(".scroll-title").attr("style","left: 38px;");
+    } else {
+        disp = 0;
+        document.getElementById('speednav').style.display = 'none';
+		$(".scroll-title").attr("style","left: -1px;");
+    }
+}
+
+function calcHeight() {
+    var the_height = document.getElementById('app').contentWindow.document.body.scrollHeight;
+    document.getElementById('app').height = the_height;
+}
+	///=======
+
+// Get the button
+let mybutton = document.getElementById("toTop");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
