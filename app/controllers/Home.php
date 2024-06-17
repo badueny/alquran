@@ -22,7 +22,6 @@ class Home extends CI_Controller {
 
 	function getSuratByJuzz()
 	{
-		//profilerCi();
 		$juzz = cleanInputGet('j');
 		$listSurat='';
 		if($juzz!='all'){
@@ -76,7 +75,6 @@ class Home extends CI_Controller {
 
 	function getAyat()
 	{
-		//profilerCi();
 		$juzz = cleanInputGet('j');
 		$surah = cleanInputGet('s');
 		$dari = cleanInputGet('d');
@@ -98,18 +96,5 @@ class Home extends CI_Controller {
 		}
 		$data['ayat'] = DB::getDataSelectWhere('ayat','*',$where)->result();
 		$this->load->view('cquran',$data);
-	}
-
-	function getAudioQuran()
-	{
-		$surah = cleanInputGet('s');
-		$surah = str_pad($surah,3,"0",STR_PAD_LEFT);
-		$jumlahAyat = DB::getDataSelectWhere('surah','num_ayah_surah',['id_surah' => cleanInputGet('s')])->row('num_ayah_surah');		
-		for($i=1;$i<=$jumlahAyat;$i++){
-			$jumAyat = str_pad($i,3,"0",STR_PAD_LEFT);
-			$fname = $surah.$jumAyat.'.m4a';
-			$fileContent = url_get_contents('https://media.qurankemenag.net/audio/Abu_Bakr_Ash-Shaatree_aac64/'.$fname);
-			@file_put_contents('static/quran/audio/'.$fname,$fileContent);
-		}		
-	}
+	}	
 }
