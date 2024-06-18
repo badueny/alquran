@@ -5,7 +5,7 @@ Al-Qur'an Web Base PWA App
 ARABIC TEXT, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio per Ayat.
 
 ## Demo
-[DEMO](https://quran.lptqbanten.or.id/)
+[DEMO APP](https://quran.lptqbanten.or.id/)
 
 
 ## Install 
