@@ -2,7 +2,10 @@
 Al-Qur'an Web Base PWA App
 
 ## Fitur
-ARABIC TEXT, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio per Ayat.
+ARABIC TEXT, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio per Ayat,Auto Scroll.
+
+### Filtering
+Juzz, Surah, Range Ayah
 
 ## Demo
 [DEMO APP](https://quran.lptqbanten.or.id/)
