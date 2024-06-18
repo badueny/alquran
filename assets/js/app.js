@@ -33,7 +33,7 @@ $("#juzz").on("change", function(e){
 	var val = $(this).val();
 	$("#ajuzz").val(val);	
 	getSuratByJuzz(val);
-    loadList();
+    //loadList();
 });
 
 function getSuratByJuzz(val)
@@ -86,7 +86,7 @@ $("#surah").on("change", function(e){
 	$("#surah").select2();
 	$("#dari").select2();
 	$("#ke").select2();
-	loadList();
+	//loadList();
     $("#juzz").val($("#ajuzz").val()).trigger('change.select2');
  
  function encodeHTML(s) {
@@ -139,7 +139,7 @@ $("#surah").on("change", function(e){
 			window.history.pushState('quran', 'Quran', defaulturis);
             $("#dari").val(d).trigger('change.select2');
 			$("#ke").val(k).trigger('change.select2');
-			$("#infoNav").html("<p class='text-center'>Load Data...</p>");
+			$("#infoNav").html("<p class='text-center'><i class='fas fa-spinner fa-spin'></i> Load Data...</p>");
 			loadingAyat();
 		$.ajax({  
 				url:baseUrl+"getAyat",  
