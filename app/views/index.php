@@ -46,7 +46,7 @@
 		</div>
 		<div class="col-md-2 navi mb-1">
 			<label for="surah" class="form-label">Dari ayah ke ayah</label>
-			<div class="input-group">
+			<div class="input-group mb-2">
 				<select class="form-control" id="dari"></select>
 				<span class="input-group-text" style="height: 27px;">s.d</span>
 				<select class="form-control" id="ke"></select>
@@ -59,9 +59,7 @@
 		<div class="col-md-2 navi mb-1">
 			<label class="form-label text-light d-none d-sm-block">option</label>
 			<div class="dropdown">
-				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;" data-bs-toggle="dropdown" aria-expanded="false">
-					Pilihan
-				</a>
+				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
 				<ul class="dropdown-menu">
 					<li><div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" id="trans">
