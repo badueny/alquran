@@ -19,6 +19,7 @@ var playerQs = new Plyr('#player');
 	playerQs.on('ended', (event) => {
 		$(".plyr").hide();
 		$("#app .arab").attr("style","color:black");
+		$("#app .btn-audio").attr("disabled",false);
 	});
 	
 
@@ -81,7 +82,6 @@ $("#surah").on("change", function(e){
  }
 
     getSuratByJuzz($("#ajuzz").val());
-	var s = $('#surah').val(),srh = s.split("|");
 	$("#juzz").select2();
 	$("#surah").select2();
 	$("#dari").select2();
@@ -139,6 +139,7 @@ $("#surah").on("change", function(e){
 			window.history.pushState('quran', 'Quran', defaulturis);
             $("#dari").val(d).trigger('change.select2');
 			$("#ke").val(k).trigger('change.select2');
+			$("#infoNav").html('');
 		$.ajax({  
 				url:baseUrl+"getAyat",  
 				type:"GET",  
