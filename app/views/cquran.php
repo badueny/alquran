@@ -38,7 +38,8 @@ $("#terj").on("click",function(){
     chk==true ? $(".terjemah").show() : $(".terjemah").hide();
 });
 
-$(".btn-audio").on("click",function(){
+$(".btn-audio").on("click",function(){  
+    $(".btn-audio").attr('disabled', true);
     $(".plyr--audio").show();
     playAudio($(this).data('name'),$(this).data('audio'));
     $(".arab").attr('style','color:black');

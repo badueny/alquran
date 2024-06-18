@@ -1,3 +1,11 @@
 
 app/config/config.php
 sitemap.xml
+assets/js/app.js
+assets/js/fontawesome.min.js
+assets/js/jquery.min.js
+assets/js/plyr.js
+assets/js/script.js
+assets/js/select2.min.js
+assets/css/quran.css
+
