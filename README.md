@@ -15,7 +15,7 @@ Al-Qur'an Web Base PWA App
 ### Filtering
 Juzz, Surah, Range Ayah
 
-## Install 
+### Install 
 
 Clone this Repository
 
@@ -28,7 +28,7 @@ ENGINE 	: InnoDB
 CHARSET : utf8mb3
 
 
-## Database Config:
+### Database Config:
 app/config/config.php
 
 $config['dba'] = 'DB_NAME';
@@ -40,10 +40,10 @@ $config['dbp'] = 'DB_PASSWORD';
 $config['dbs'] = 'DB_HOST';
 
 
-## LIVE APP
+### LIVE APP
 [VISIT LIVE APP](https://quran.lptqbanten.or.id/)
 
-## Qur'an Data source: 
+### Qur'an Data source: 
 
 Lajnah Pentashihan Mushaf Al-Qur'an Kementrian Agama Republik Indonesia
 
