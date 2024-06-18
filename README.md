@@ -1,7 +1,7 @@
 # Al-Qur'an Karim 
 Al-Qur'an Web Base PWA App
 
-TEXT ARABIC, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio per Ayat.
+ARABIC TEXT, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio per Ayat.
 
 Create Database and Import quran.sql From static/quran/sql
 
@@ -23,3 +23,8 @@ $config['dbu'] = 'DB_USER';
 $config['dbp'] = 'DB_PASSWORD';
 
 $config['dbs'] = 'DB_HOST';
+
+
+Qur'an Data source: 
+
+Lajnah Pentashihan Mushaf Al-Qur'an Kementrian Agama Republik Indonesia
