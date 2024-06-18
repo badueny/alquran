@@ -139,16 +139,15 @@ $("#surah").on("change", function(e){
 			window.history.pushState('quran', 'Quran', defaulturis);
             $("#dari").val(d).trigger('change.select2');
 			$("#ke").val(k).trigger('change.select2');
-			$("#infoNav").html('');
+			$("#infoNav").html("<p class='text-center'>Load Data...</p>");
+			loadingAyat();
 		$.ajax({  
 				url:baseUrl+"getAyat",  
 				type:"GET",  
 				dataType:"TEXT", 
 				data:{j:j,s:s, d:d, k:k},
 				success:function(data)  
-				{                  
-					$('#app').html(data);
-					upToDiv("home");
+				{                  					
 					if($("#surah").val()!=''){
 						var bismillah = (s!='1' && s!='9') ? "<p class='arab text-center'>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>" : '';
 						var infosurat = $("#surah option:selected").text();
@@ -157,8 +156,19 @@ $("#surah").on("change", function(e){
 						var InfoAyah = "Surah: <b>"+infosurat[0]+"</b> ayah <b>"+$("#dari option:selected").text()+"</b> s.d <b>"+$("#ke option:selected").text()+"</b>";
 						$("#infoNav").html(InfoAyah+bismillah);
 					}else{ $("#infoNav").html(''); }
+					$('#app').html(data);
+					upToDiv("home");
 				}  
 		});	
+	}
+
+	function loadingAyat()
+	{	
+		var contLoad='';
+		for(var x=1;x<=10;x++){
+			contLoad +='<div class="row baris animate__animated animate__fadeIn" style="background: #f9f9f9;height: 150px;"></div>';
+		}
+		$('#app').html(contLoad);
 	}
 
 	
