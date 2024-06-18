@@ -182,6 +182,80 @@ function hideInfoCopy()
 	$("#infoCopy").hide();
 }
 
+function copyTextTafsir(elmtID) {
+	var out = document.querySelector('#tfsr'+elmtID);
+    var textArea = document.createElement('textarea');
+    textArea.value = out.innerHTML;
+    textArea.style.opacity = 0;
+    $(".modal-body").append(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      var success = document.execCommand('copy');
+      console.log(`Text copy was ${success ? 'successful' : 'unsuccessful'}.`);
+    } catch (err) {
+      console.error(err.name, err.message);
+    }
+	$("#"+elmtID).hide();
+	$(".modal-body").append('<small class="text-success"><i>Copy Text Tafsir Sukses</i></small>');
+	$(".modal-body").remove(textArea);
+}
+
+function copyTextEnglish(elmtID) {
+	var out = document.querySelector('#e'+elmtID);
+    var textArea = document.createElement('textarea');
+    textArea.value = out.innerHTML;
+    textArea.style.opacity = 0;
+    $(".modal-body").append(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      var success = document.execCommand('copy');
+      console.log(`Text copy was ${success ? 'successful' : 'unsuccessful'}.`);
+    } catch (err) {
+      console.error(err.name, err.message);
+    }
+	$("#"+elmtID).hide();
+	$(".modal-body").append('<small class="text-success"><i>Copy Success</i></small>');
+	$(".modal-body").remove(textArea);
+}
+
+function getTafsir(s,a)
+	{
+		$.ajax({  
+			url:baseUrl+"getTafsir",  
+			type:"GET",  
+			dataType:"TEXT", 
+			data:{s:s,a:a},
+			success:function(data)  
+			{    
+				$(".modal-title").html('Tafsir al-Jalalain');
+				$(".modal-body").html(data);
+				$("#tafsirModal").modal({ backdrop: "static", keyboard: !1 }), 				
+				$("#tafsirModal").modal("show");
+			}
+		});
+	}
+
+	function getTerjemahEnglish(s,a)
+	{
+		$.ajax({  
+			url:baseUrl+"getTerjemahEnglish",  
+			type:"GET",  
+			dataType:"TEXT", 
+			data:{s:s,a:a},
+			success:function(data)  
+			{    
+				$(".modal-title").html('Terjemah English');
+				$(".modal-body").html(data);
+				$("#tafsirModal").modal({ backdrop: "static", keyboard: !1 }), 				
+				$("#tafsirModal").modal("show");
+			}
+		});
+	}
+
+	
+
 //autoscroll
 var speed = 1;
 var disp = 0;

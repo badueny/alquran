@@ -199,6 +199,19 @@
     padding: 0.1rem 0.03rem;
 }
 
+.btn-tafsir{
+    width: 25px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    padding: 0.1rem 0.03rem;
+}
+.btn-eng{
+    width: 25px;
+    margin-left: 8px;
+    margin-bottom: 5px;
+    padding: 0.1rem 0.03rem;
+}
+
 .btn-menu{
     width: 40px;
     height: 40px;

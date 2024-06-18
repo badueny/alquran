@@ -97,4 +97,26 @@ class Home extends CI_Controller {
 		$data['ayat'] = DB::getDataSelectWhere('ayat','*',$where)->result();
 		$this->load->view('cquran',$data);
 	}	
+
+	function getTafsir()
+	{
+		$surah = cleanInputGet('s');
+		$ayah = cleanInputGet('a');
+		
+		$tafsir = DB::getDataWhereSelectJoin('tafsir_jalalayn','tbl_tafsir_jalalayn.text,tbl_surah.latin_surah',['sura' => $surah, 'aya' => $ayah],['tbl_surah' => 'tbl_surah.id_surah=tbl_tafsir_jalalayn.sura'])->row();
+		echo '<h6>Surah '.$tafsir->latin_surah.' ayah '.$ayah.'</h6>
+		<p style="text-align:justify" id="tfsr'.$ayah.'">'.$tafsir->text.'</p>
+		<button class="btn btn-sm btn-outline-success btn-copyTafsir" data-toggle="tooltip" id="'.$ayah.'" onclick="copyTextTafsir(this.id)" title="Salin Tafsir"><i class="fas fa-copy"></i> Copy Tafsir</button>';
+	}
+
+	function getTerjemahEnglish()
+	{
+		$surah = cleanInputGet('s');
+		$ayah = cleanInputGet('a');
+		
+		$tafsir = DB::getDataWhereSelectJoin('terjemah_english','tbl_terjemah_english.text,tbl_surah.latin_surah',['sura' => $surah, 'aya' => $ayah],['tbl_surah' => 'tbl_surah.id_surah=tbl_terjemah_english.sura'])->row();
+		echo '<h6>Sura '.$tafsir->latin_surah.' aya '.$ayah.'</h6>
+		<p style="text-align:justify" id="eng'.$ayah.'">'.$tafsir->text.'</p>
+		<button class="btn btn-sm btn-outline-success" data-toggle="tooltip" id="ng'.$ayah.'" onclick="copyTextEnglish(this.id)" title="Copy English"><i class="fas fa-copy"></i> Copy</button>';
+	}
 }

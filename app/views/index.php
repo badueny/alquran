@@ -17,6 +17,7 @@
 	<link rel="manifest" href="<?=base_url()?>manifest.json"> 	
 	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512"/>
 	<link rel="stylesheet" href="assets/css/app.min.css">	
+	<link rel="stylesheet" href="assets/css/quran.min.css?<?=strtotime('now')?>">
 	<script src="assets/js/script.min.js"></script>
 	<script>var defaulturis = "", baseUrl = "<?=base_url()?>";</script>
 </head>
@@ -106,6 +107,17 @@
         </ul>
     </div>  
 </div> 
+<div class="modal fade" id="tafsirModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+</div>
 <button onclick="topFunction()" id="toTop" title="Ke Atas">Ke Atas</button>
 <audio id="player" class="animate__animated animate__fadeInUp"></audio>
 <div class="alert alert-success text-center" role="alert" id="infoCopy"></div>

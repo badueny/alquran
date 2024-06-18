@@ -18,6 +18,8 @@ if($ayat){
             <div class="row text-left">
                 <button class="btn btn-sm btn-outline-success btn-audio" data-toggle="tooltip" title="Play Audio Ayah" data-ayah="'.$row->no_ayat.'" data-audio="'.$fAudio.'" data-name="'.$row->no_ayat.'"><i class="fas fa-play"></i></i></button>
                 <button class="btn btn-sm btn-outline-success btn-copy" data-toggle="tooltip" title="Salin Ayah" data-ayah="'.$row->no_ayat.'"><i class="fas fa-copy"></i></button>
+                <button class="btn btn-sm btn-outline-success btn-tafsir" data-toggle="tooltip" title="Tafsir al-Jalalain" data-ayah="'.$row->no_ayat.'" data-surah="'.$row->surah_id.'"><i class="far fa-file-alt"></i></button>
+                <button class="btn btn-sm btn-outline-success btn-eng" data-toggle="tooltip" title="Terjemah English" data-ayah="'.$row->no_ayat.'" data-surah="'.$row->surah_id.'">EN</button>
 			</div>
             </div>';
 		}
@@ -49,5 +51,13 @@ $(".btn-copy").on("click",function(){
     
 });
 
+$(".btn-tafsir").on("click", function(){
+		getTafsir($(this).data("surah"),$(this).data("ayah"));		
+	});
+
+$(".btn-eng").on("click", function(){
+    getTerjemahEnglish($(this).data("surah"),$(this).data("ayah"));		
+});
+   
 
 </script>
