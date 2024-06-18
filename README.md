@@ -1,6 +1,18 @@
-# alquran
-Aplikasi Al-Qur'an 
+# Al-Qur'an Karim 
+Al-Qur'an Web Base PWA App
 
-TEXT ARABIC, Transliterasi Latin, Terjemah, Per-Halaman, Audio per Ayat.
+TEXT ARABIC, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio per Ayat.
 
-Create Database and Import From static/quran/sql
+Create Database and Import quran.sql From static/quran/sql
+
+Collocation Database: utf8_general_ci
+ENGINE 	: InnoDB
+CHARSET : utf8mb3
+
+Database Config:
+app/config/config.php
+
+$config['dba'] = 'DB_NAME';
+$config['dbu'] = 'DB_USER';
+$config['dbp'] = 'DB_PASSWORD';
+$config['dbs'] = 'DB_HOST';
