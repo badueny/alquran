@@ -42,13 +42,7 @@
 		</div>
 		<div class="col-md-4 navi">
 			<label for="surah" class="form-label">Surah</label>
-			<select class="form-select arab-text" name="surah" id="surah" style="width:100%">
-				<?php foreach($surah as $rsurah){ 
-					$surahId = cleanInputGet('s')=='' ? '1' : cleanInputGet('s');
-					$selected = cleanInputGet('s')==$rsurah->id_surah ? 'selected' : '';
-					echo '<option value="'.$rsurah->id_surah.'|'.$rsurah->num_ayah_surah.'" '.$selected.'>'.$rsurah->id_surah.'. '.$rsurah->arabic_surah.' ('.trim($rsurah->latin_surah).'|'.trim($rsurah->location_surah).'|'.$rsurah->num_ayah_surah.' ayat)</option>';
-				} ?>
-			</select>
+			<select class="form-select arab-text" name="surah" id="surah" style="width:100%"></select>
 		</div>
 		<div class="col-md-2 navi">
 			<label for="surah" class="form-label">Dari ayah Ke ayah</label>
