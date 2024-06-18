@@ -539,7 +539,7 @@ $config['proxy_ips'] = '';
 |-----------
 */
 $config['jwt_key'] = '!@#456&A*k]u';
-$config['dba'] = 'quran';
+$config['dba'] = 'qurandb';
 $config['dbu'] = 'root';
 $config['dbp'] = '';
 $config['dbs'] = 'localhost';
