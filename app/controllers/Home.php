@@ -37,7 +37,7 @@ class Home extends CI_Controller {
 				$nosurat = $rsurah->id_surah;
 			}
 			$selected = $no==1 ? 'selected' : '';
-			$resultSurat .= '<option value="'.$rsurah->id_surah.'|'.$rsurah->num_ayah_surah.'" '.$selected.'>'.$rsurah->id_surah.'. '.$rsurah->arabic_surah.' ('.trim($rsurah->latin_surah).'|'.trim($rsurah->location_surah).'|'.$rsurah->num_ayah_surah.' ayat)</option>';
+			$resultSurat .= '<option value="'.$rsurah->id_surah.'|'.$rsurah->num_ayah_surah.'" '.$selected.'>'.$rsurah->id_surah.'. '.$rsurah->arabic_surah.' ('.trim($rsurah->latin_surah).'|'.trim($rsurah->location_surah).'|'.$rsurah->num_ayah_surah.'ayah)</option>';
 			$no++;
 		}
 		$result['list'] = $resultSurat;
