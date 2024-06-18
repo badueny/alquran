@@ -1,36 +1,24 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
+	<title>Qur'an Karim</title>
 	<meta charset="utf-8"> 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport"> 
-	<meta property="og:locale" content="id_ID" />
-	<title>Qur'an Karim</title>
-	<meta property="og:title" content="Al-Quran Karim" /> 
-	<meta property="og:type" content="website" />
-	<meta name="keyword" content="Quran" />
-	<meta name="author" content="4113N BITDEV.ID" /> 
-  	<link rel="manifest" href="<?=base_url()?>manifest.json">
-	<meta property="og:description" content="Qur'an Karim" /> 
+	<meta property="og:locale" content="id_ID"/>	
+	<meta property="og:title" content="Al-Quran Karim"/> 
+	<meta property="og:type" content="website"/>
+	<meta property="og:description" content="Al-Quran Karim Terjemah Indonesia" /> 
 	<meta property="og:url" content="<?=base_url()?>" />
-	<meta property="og:image" content="<?=base_url()?>assets/images/icons/al-quran-512.png" /> 
-	<meta content="Quran" name="description" /> 
-	<meta content="Quran" name="keywords" />
-	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512" />
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet"href="assets/css/animate.min.css"/>
-	<link rel="stylesheet" href="assets/css/fontawesome.min.css"/>
-	<link rel="stylesheet" href="assets/css/icomoon.css">
-	<link href="assets/css/select2.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="assets/css/plyr.css" />
-	<link rel="stylesheet" href="assets/css/quran.min.css?<?=strtotime('now')?>">
-	<script>var defaulturis = "", baseUrl = "<?=base_url()?>"; </script>
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.min.js"></script>	
-	<script src="assets/js/select2.min.js"></script>
-	<script src="assets/js/plyr.js"></script>
-	<script src="assets/js/fontawesome.min.js"></script>
+	<meta property="og:image" content="<?=base_url()?>assets/images/icons/al-quran-512.png" />
+	<meta property="description" content="Al-Quran Karim Terjemah Indonesia" /> 
+	<meta content="quran,quran terjemah Indonesia,audio alquran,juzz,ayat,banten,lptqbanten" name="keywords" />
+	<meta content="Al-Quran Karim Terjemah Indonesia" name="description" />
+	<meta name="author" content="badueny@BITDEV.ID" />
+	<link rel="manifest" href="<?=base_url()?>manifest.json"> 	
+	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512"/>
+	<link rel="stylesheet" href="assets/css/app.min.css">	
+	<script src="assets/js/script.min.js"></script>
+	<script>var defaulturis = "", baseUrl = "<?=base_url()?>";</script>
 </head>
 <body id="home">
 <nav class="navbar sticky-top navbar-light bg-light mb-4">
@@ -122,5 +110,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <audio id="player" class="animate__animated animate__fadeInUp"></audio>
 <div class="alert alert-success text-center" role="alert" id="infoCopy"></div>
 <script src="assets/js/app.min.js?<?=strtotime('now')?>"></script>
+<script src="assets/js/sienna.min.js"></script>
 </body>
 </html>

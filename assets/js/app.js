@@ -12,7 +12,15 @@ var playerQs = new Plyr('#player');
 				},
 			],
 		};
+
+		
 	}
+
+	playerQs.on('ended', (event) => {
+		$(".plyr").hide();
+		$("#app .arab").attr("style","color:black");
+	});
+	
 
 
 $(".btn-menu").on("click", function(e){
