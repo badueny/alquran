@@ -284,3 +284,5 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+void 0!==navigator.serviceWorker&&navigator.serviceWorker.register(baseUrl+"sw.js");

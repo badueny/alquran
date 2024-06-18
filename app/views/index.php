@@ -122,6 +122,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <audio id="player" class="animate__animated animate__fadeInUp"></audio>
 <div class="alert alert-success text-center" role="alert" id="infoCopy"></div>
 <script src="assets/js/app.min.js?<?=strtotime('now')?>"></script>
-<script>void 0!==navigator.serviceWorker&&navigator.serviceWorker.register(baseUrl+"sw.js");</script>  
 </body>
 </html>
