@@ -6,8 +6,12 @@ TEXT ARABIC, Transliterasi Latin, Terjemah Indonesia, Per-Halaman (soon), Audio 
 Create Database and Import quran.sql From static/quran/sql
 
 Collocation Database: utf8_general_ci
+
 ENGINE 	: InnoDB
+
 CHARSET : utf8mb3
+
+
 
 Database Config:
 app/config/config.php
