@@ -37,3 +37,5 @@ $config['dbs'] = 'DB_HOST';
 Lajnah Pentashihan Mushaf Al-Qur'an Kementrian Agama Republik Indonesia
 
 
+Copyright Allah SWT
+
