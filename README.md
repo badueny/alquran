@@ -40,8 +40,8 @@ $config['dbp'] = 'DB_PASSWORD';
 $config['dbs'] = 'DB_HOST';
 
 
-## Demo
-[DEMO APP](https://quran.lptqbanten.or.id/)
+## LIVE APP
+[LIVE](https://quran.lptqbanten.or.id/)
 
 ## Qur'an Data source: 
 
