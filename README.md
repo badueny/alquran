@@ -2,7 +2,7 @@
 Al-Qur'an Web Base PWA App
 
 ## Fitur
-1. ARABIC TEXT
+1. Qur'an Text (arabic)
 2. Transliterasi Latin
 3. Terjemah Indonesia
 4. Terjemah English
