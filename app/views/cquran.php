@@ -16,8 +16,8 @@ if($ayat){
 			<p class="terjemah">'.$terjemah.'</p>
             '.$catatanKaki.'
             <div class="row text-left">
-                <button class="btn btn-sm btn-outline-success btn-audio" data-ayah="'.$row->no_ayat.'" data-audio="'.$fAudio.'" data-name="'.$row->no_ayat.'"><i class="fas fa-play"></i></i></button>
-                <button class="btn btn-sm btn-outline-success btn-copy" data-ayah="'.$row->no_ayat.'"><i class="fas fa-copy"></i></button>
+                <button class="btn btn-sm btn-outline-success btn-audio" data-toggle="tooltip" title="Play Audio Ayah" data-ayah="'.$row->no_ayat.'" data-audio="'.$fAudio.'" data-name="'.$row->no_ayat.'"><i class="fas fa-play"></i></i></button>
+                <button class="btn btn-sm btn-outline-success btn-copy" data-toggle="tooltip" title="Salin Ayah" data-ayah="'.$row->no_ayat.'"><i class="fas fa-copy"></i></button>
 			</div>
             </div>';
 		}

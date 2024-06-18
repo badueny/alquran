@@ -1,22 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 	<meta charset="utf-8"> 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport"> 
 	<meta property="og:locale" content="id_ID" />
-	<title>Qur'an</title>
-	<meta property="og:title" content="Al-Quran" /> 
+	<title>Qur'an Karim</title>
+	<meta property="og:title" content="Al-Quran Karim" /> 
 	<meta property="og:type" content="website" />
 	<meta name="keyword" content="Quran" />
 	<meta name="author" content="4113N BITDEV.ID" /> 
-	<meta property="og:description" content="quran" /> 
+  	<link rel="manifest" href="<?=base_url()?>manifest.json">
+	<meta property="og:description" content="Qur'an Karim" /> 
 	<meta property="og:url" content="<?=base_url()?>" />
-	<meta property="og:image" content="assets/images/icons/favicon.png" /> 
+	<meta property="og:image" content="<?=base_url()?>assets/images/icons/al-quran-512.png" /> 
 	<meta content="Quran" name="description" /> 
 	<meta content="Quran" name="keywords" />
-	<link rel="icon" href="assets/images/icons/favicon.png" sizes="192x192" />
+	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512" />
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet"href="assets/css/animate.min.css"/>
 	<link rel="stylesheet" href="assets/css/fontawesome.min.css"/>
@@ -35,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <nav class="navbar sticky-top navbar-light bg-light mb-4">
   <div class="container">
  	 <div class="row col-md-12">
-	  	<div class="col-md-2 navbar-brand">Qur'an</div>
+       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none"><img src="assets/images/icons/al-quran-512.png" width="45px"> Qur'an Karim</a></div>
 		  <div class="col-md-1">
 			<label for="surah" class="form-label">Juz</label>
 			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
@@ -118,5 +119,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <audio id="player" class="animate__animated animate__fadeInUp"></audio>
 <div class="alert alert-success text-center" role="alert" id="infoCopy"></div>
 <script src="assets/js/app.min.js?<?=strtotime('now')?>"></script>
+<script>void 0!==navigator.serviceWorker&&navigator.serviceWorker.register(baseUrl+"sw.js");</script>  
 </body>
 </html>
