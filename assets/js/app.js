@@ -15,6 +15,11 @@ var playerQs = new Plyr('#player');
 	}
 
 
+$(".btn-menu").on("click", function(e){
+	
+	$(".navi").toggle("slow");
+});
+
 $("#juzz").on("change", function(e){
 	var val = $(this).val();
 	$("#ajuzz").val(val);	
@@ -135,7 +140,14 @@ $("#surah").on("change", function(e){
 				{                  
 					$('#app').html(data);
 					upToDiv("home");
-					
+					if($("#surah").val()!=''){
+						var bismillah = (s!='1' && s!='9') ? "<p class='arab text-center'>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>" : '';
+						var infosurat = $("#surah option:selected").text();
+						infosurat = infosurat.split("(");
+						infosurat = infosurat[1].split("|");
+						var InfoAyah = "Surah: <b>"+infosurat[0]+"</b> ayah <b>"+$("#dari option:selected").text()+"</b> s.d <b>"+$("#ke option:selected").text()+"</b>";
+						$("#infoNav").html(InfoAyah+bismillah);
+					}else{ $("#infoNav").html(''); }
 				}  
 		});	
 	}

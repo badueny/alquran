@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="container">
  	 <div class="row col-md-12">
        <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none"><img src="assets/images/icons/al-quran-512.png" width="45px"> Qur'an Karim</a></div>
-		  <div class="col-md-1">
+		  <div class="col-md-1 navi">
 			<label for="surah" class="form-label">Juz</label>
 			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
 			<select class="form-select" name="juzz" id="juzz">				
@@ -51,9 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}  ?>
 			</select>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 navi">
 			<label for="surah" class="form-label">Surah</label>
-			<select class="form-select arab-text" name="surah" id="surah">
+			<select class="form-select arab-text" name="surah" id="surah" style="width:100%">
 				<?php foreach($surah as $rsurah){ 
 					$surahId = cleanInputGet('s')=='' ? '1' : cleanInputGet('s');
 					$selected = cleanInputGet('s')==$rsurah->id_surah ? 'selected' : '';
@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				} ?>
 			</select>
 		</div>
-		<div class="col-md-2">
+		<div class="col-md-2 navi">
 			<label for="surah" class="form-label">Dari ayah Ke ayah</label>
 			<div class="input-group mb-3">
 				<select class="form-control" id="dari"></select>
@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 		</div>
 		
-		<div class="col-md-2">
+		<div class="col-md-2 navi">
 			<label class="mb-4"></label>
 			<div class="dropdown" style="margin-top: 2.6px;">
 				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;" data-bs-toggle="dropdown" aria-expanded="false">
@@ -94,12 +94,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</div></li>
 				</ul>
 			</div>
-		</div>
+		</div>	
+			
+		<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>
 		
 	</div>
 	<script>var defaulturis = '?j='+$("#ajuzz").val();</script>
   </div>
 </nav>
+<p id="infoNav"></p>
 <div class="container" id="app"></div>
 <div class="auto-scroll">
 	<p class="scroll-title" onclick="tooglespeed()">gulir otomatis</p>

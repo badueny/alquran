@@ -199,6 +199,14 @@
     padding: 0.1rem 0.03rem;
 }
 
+.btn-menu{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 #infoCopy{
     margin: auto;
     position: fixed;
@@ -207,6 +215,12 @@
     inset-area: center;
     display: none;
 }
+
+#infoNav{
+        text-align: center;
+        font-size: 20px;
+    }
+
 
 .footnote{
     color:red;font-size: 0.7em;
