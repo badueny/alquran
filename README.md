@@ -41,7 +41,7 @@ $config['dbs'] = 'DB_HOST';
 
 
 ## LIVE APP
-[LIVE](https://quran.lptqbanten.or.id/)
+[VISIT LIVE APP](https://quran.lptqbanten.or.id/)
 
 ## Qur'an Data source: 
 
