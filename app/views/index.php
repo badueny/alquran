@@ -26,7 +26,7 @@
   <div class="container">
  	 <div class="row col-md-12">
        <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none"><img src="assets/images/icons/al-quran-512.png" width="45px"> Qur'an Karim</a></div>
-		  <div class="col-md-1 navi">
+		  <div class="col-md-1 navi mb-1">
 			<label for="surah" class="form-label">Juz</label>
 			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
 			<select class="form-select" name="juzz" id="juzz">				
@@ -40,13 +40,13 @@
 				}  ?>
 			</select>
 		</div>
-		<div class="col-md-4 navi">
+		<div class="col-md-4 navi mb-1">
 			<label for="surah" class="form-label">Surah</label>
 			<select class="form-select arab-text" name="surah" id="surah" style="width:100%"></select>
 		</div>
-		<div class="col-md-2 navi">
-			<label for="surah" class="form-label">Dari ayah Ke ayah</label>
-			<div class="input-group mb-3">
+		<div class="col-md-2 navi mb-1">
+			<label for="surah" class="form-label">Dari ayah ke ayah</label>
+			<div class="input-group">
 				<select class="form-control" id="dari"></select>
 				<span class="input-group-text" style="height: 27px;">s.d</span>
 				<select class="form-control" id="ke"></select>
@@ -56,9 +56,9 @@
 			</div>
 		</div>
 		
-		<div class="col-md-2 navi">
-			<label class="mb-4"></label>
-			<div class="dropdown" style="margin-top: 2.6px;">
+		<div class="col-md-2 navi mb-1">
+			<label class="form-label text-light d-none d-sm-block">option</label>
+			<div class="dropdown">
 				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;" data-bs-toggle="dropdown" aria-expanded="false">
 					Pilihan
 				</a>
@@ -88,16 +88,16 @@
 <p id="infoNav"></p>
 <div class="container" id="app"></div>
 <div class="auto-scroll">
-	<p class="scroll-title" onclick="tooglespeed()">gulir otomatis</p>
+	<p class="scroll-title" onclick="tooglespeed()"> <i class="fas fa-scroll"></i> gulir otomatis</p>
 	<div id="speednav">		
         <ul>
-            <li style="list-style-type:none;border:0px;width:40px;margin-left:-40px;font-family:arial;font-size:7pt;color:#CCC;text-align:center;">kecepatan</li>
+            <li style="list-style-type:none;border:0px;width:40px;margin-left:-40px;font-family:arial;font-size:7pt;color:#CCC;text-align:center;"><i class="fas fa-tachometer-alt"></i> cepat</li>
             <li class="speedbar" id="speed5" onclick="startit(5);" onmouseout="resetBg();" onmouseover="this.style.cursor='pointer';changeBg(5);"></li>
             <li class="speedbar" id="speed4" onclick="startit(4);" onmouseout="resetBg();" onmouseover="this.style.cursor='pointer';changeBg(4);"></li>
             <li class="speedbar" id="speed3" onclick="startit(3);" onmouseout="resetBg();" onmouseover="this.style.cursor='pointer';changeBg(3);"></li>
             <li class="speedbar" id="speed2" onclick="startit(2);" onmouseout="resetBg();" onmouseover="this.style.cursor='pointer';changeBg(2);"></li>
             <li class="speedbar" id="speed1" onclick="startit(1);" onmouseout="resetBg();" onmouseover="this.style.cursor='pointer';changeBg(1);"></li>
-            <li class="speedbar" onclick="stopit();" onmouseover="this.style.cursor='pointer';" style="font-family: arial; font-size: 7pt; color: rgb(204, 204, 204); text-align: center; width: 40px; height: 12px; cursor: pointer;">berhenti</li>
+            <li class="speedbar" onclick="stopit();" onmouseover="this.style.cursor='pointer';" style="font-family: arial; font-size: 7pt; color: rgb(204, 204, 204); text-align: center; width: 40px; height: 14px; cursor: pointer;"><i class="far fa-stop-circle"></i> Stop</li>
         </ul>
     </div>  
 </div> 

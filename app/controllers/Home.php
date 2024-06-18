@@ -82,18 +82,21 @@ class Home extends CI_Controller {
 		$surah=='' ? $where['surah_id'] = '1' : $where['surah_id'] = $surah;
 		($dari!='' AND $ke=='')  ? $where['no_ayat'] = $dari : '';
 		
-		
-		if($dari!='' AND $ke!=''){
-			if($dari==$ke){
-				$where['no_ayat'] = $dari;
-			}else{
-				$daria = $dari>$ke ? $ke : $dari;
-				$kea = $ke<$dari ? $dari : $ke;
-				$where["no_ayat BETWEEN '$daria' AND '$kea'"] = NULL;
-			} 
+		if($surah!='' AND $juzz!='' AND $dari!='' AND $ke!=''){		
+			if($dari!='' AND $ke!=''){
+				if($dari==$ke){
+					$where['no_ayat'] = $dari;
+				}else{
+					$daria = $dari>$ke ? $ke : $dari;
+					$kea = $ke<$dari ? $dari : $ke;
+					$where["no_ayat BETWEEN '$daria' AND '$kea'"] = NULL;
+				} 
+			}
+			$data['ayat'] = DB::getDataSelectWhere('ayat','*',$where)->result();
+			$this->load->view('cquran',$data);
+		}else{
+			echo '<p class="text-center">Silahkan Pilih Juz/Surah/Ayat</p>';
 		}
-		$data['ayat'] = DB::getDataSelectWhere('ayat','*',$where)->result();
-		$this->load->view('cquran',$data);
 	}	
 
 	function getTafsir()

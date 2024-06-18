@@ -86,7 +86,6 @@ $("#surah").on("change", function(e){
 	$("#surah").select2();
 	$("#dari").select2();
 	$("#ke").select2();
-	//loadList();
     $("#juzz").val($("#ajuzz").val()).trigger('change.select2');
  
  function encodeHTML(s) {
@@ -165,7 +164,7 @@ $("#surah").on("change", function(e){
 	function loadingAyat()
 	{	
 		var contLoad='';
-		for(var x=1;x<=10;x++){
+		for(var x=1;x<=7;x++){
 			contLoad +='<div class="row baris animate__animated animate__fadeIn" style="background: #f9f9f9;height: 150px;"></div>';
 		}
 		$('#app').html(contLoad);

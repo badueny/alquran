@@ -1,5 +1,5 @@
 <?php
-if($ayat){
+    if($ayat){
 		foreach($ayat as $row){            
             $surahIdAudio = str_pad($row->surah_id,3,"0",STR_PAD_LEFT);
             $ayahIdAudio = str_pad($row->no_ayat,3,"0",STR_PAD_LEFT);
