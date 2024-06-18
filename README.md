@@ -13,6 +13,9 @@ Database Config:
 app/config/config.php
 
 $config['dba'] = 'DB_NAME';
+
 $config['dbu'] = 'DB_USER';
+
 $config['dbp'] = 'DB_PASSWORD';
+
 $config['dbs'] = 'DB_HOST';
