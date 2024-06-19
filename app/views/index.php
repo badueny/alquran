@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-	<title>Qur'an Karim</title>
+	<title>Al-Qur'an Karim</title>
 	<meta charset="utf-8"> 
 	<meta content="width=device-width, initial-scale=1.0" name="viewport"> 
 	<meta property="og:locale" content="id_ID"/>	
-	<meta property="og:title" content="Al-Quran Karim"/> 
+	<meta property="og:title" content="Al-Qur'an Karim"/> 
 	<meta property="og:type" content="website"/>
-	<meta property="og:description" content="Al-Quran Karim Terjemah Indonesia" /> 
+	<meta property="og:description" content="Al-Qur'an Karim Terjemah Indonesia" /> 
 	<meta property="og:url" content="<?=base_url()?>" />
 	<meta property="og:image" content="<?=base_url()?>assets/images/icons/al-quran-512.png" />
-	<meta property="description" content="Al-Quran Karim Terjemah Indonesia" /> 
-	<meta content="quran,quran terjemah Indonesia,audio alquran,juzz,ayat,banten,lptqbanten" name="keywords" />
-	<meta content="Al-Quran Karim Terjemah Indonesia" name="description" />
+	<meta property="description" content="Al-Qur'an Karim Terjemah Indonesia" /> 
+	<meta content="quran,Al-Qur'an terjemah Indonesia,audio alquran,juzz,ayat,banten,lptqbanten" name="keywords" />
+	<meta content="Al-Qur'an Karim Terjemah Indonesia" name="description" />
 	<meta name="author" content="badueny@BITDEV.ID" />
 	<link rel="manifest" href="<?=base_url()?>manifest.json"> 	
 	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512"/>
@@ -25,7 +25,7 @@
 <nav class="navbar sticky-top navbar-light bg-light mb-4">
   <div class="container">
  	 <div class="row col-md-12">
-       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none"><img src="assets/images/icons/al-quran-512.png" width="45px"> Qur'an Karim</a></div>
+       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
 		  <div class="col-md-1 navi mb-1">
 			<label for="surah" class="form-label">Juz</label>
 			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
@@ -54,8 +54,7 @@
 				<input type="hidden" value="<?=cleanInputGet('d')?>" id="adari">
 				<input type="hidden" value="<?=cleanInputGet('s')?>" id="asurah">
 			</div>
-		</div>
-		
+		</div>		
 		<div class="col-md-2 navi mb-1">
 			<label class="form-label text-light d-none d-sm-block">option</label>
 			<div class="dropdown">
@@ -75,10 +74,8 @@
 				</div></li>
 				</ul>
 			</div>
-		</div>	
-			
-		<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>
-		
+		</div>				
+		<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>		
 	</div>
 	<script>var defaulturis = '?j='+$("#ajuzz").val();</script>
   </div>

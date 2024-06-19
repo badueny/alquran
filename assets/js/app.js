@@ -256,7 +256,7 @@ function getTafsir(s,a)
 			data:{s:s,a:a},
 			success:function(data)  
 			{    
-				$(".modal-title").html('Terjemah English');
+				$(".modal-title").html('Terjemah English <font size="-1"><i>*Sahih International</i></font>');
 				$(".modal-body").html(data);
 				$("#tafsirModal").modal({ backdrop: "static", keyboard: !1 }), 				
 				$("#tafsirModal").modal("show");
