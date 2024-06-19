@@ -2,15 +2,16 @@
 Al-Qur'an Web Base PWA App
 
 ## Fitur
-1. Qur'an Text (arabic)
+1. Al-Qur'an (arabic)
 2. Transliterasi Latin
 3. Terjemah Indonesia
 4. Terjemah English
-5. Tafsir al-Jalalain
-6. Audio per Ayat
-7. Auto Scroll
-8. Accessibility Menu
-9. Read Quran Per-Page (soon)
+5. Al-Qur'an Isyarat
+6. Tafsir al-Jalalain
+7. Audio per Ayat
+8. Auto Scroll
+9. Accessibility Menu
+10. Read Quran Per-Page (soon)
 
 ### Filtering
 Juzz, Surah, Range Ayah
