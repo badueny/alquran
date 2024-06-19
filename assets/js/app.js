@@ -22,10 +22,27 @@ var playerQs = new Plyr('#player');
 		$("#app .btn-audio").attr("disabled",false);
 	});
 	
+$("#unduhisrt").on("click", function(e){
+	e.preventDefault();
+	var fname = $(this).data('file');
+	downloadFile(baseUrl+'static/panduan/'+fname, fname)
+});
 
+function downloadFile(url, name) {
+	fetch(url)
+		.then(res => res.blob()) 
+		.then(blob => {
+			let objectURL = URL.createObjectURL(blob);
+			var link = document.createElement('a');
+			link.download = name;
+			link.href = objectURL;
+			document.body.appendChild(link);
+			link.click();
+			document.body.removeChild(link);
+		});
+  }
 
-$(".btn-menu").on("click", function(e){
-	
+$(".btn-menu").on("click", function(e){	
 	$(".navi").toggle("slow");
 });
 
@@ -140,6 +157,9 @@ $("#surah").on("change", function(e){
 			$("#ke").val(k).trigger('change.select2');
 			$("#infoNav").html("<p class='text-center'><i class='fas fa-spinner fa-spin'></i> Load Data...</p>");
 			loadingAyat();
+			$("#trans").prop("checked", false);
+			$("#terj").prop("checked", false);
+			$("#isrt").prop("checked", false);
 		$.ajax({  
 				url:baseUrl+"getAyat",  
 				type:"GET",  
@@ -376,5 +396,7 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+
 
 void 0!==navigator.serviceWorker&&navigator.serviceWorker.register(baseUrl+"sw.js");

@@ -28,6 +28,7 @@
     padding: 15px 15px 0 15px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 16px;
     flex: 1;
     margin: 0;
@@ -46,7 +47,19 @@
     font-weight: 400;
     text-align: right;
 }
-/*ic-frame-number.svg*/
+
+.isyarat {
+    margin-top: 2px;
+    line-height: 2em;
+    padding: 4px 1px 16px;
+    font-size: 28px;
+    font-family: LPMQ-ISYARAT, "Traditional Arabic", Tahoma, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: right;
+    display: none;
+}
+
 .surah-number {
     margin: 14px 16px 0 0;
     width: 41px;
@@ -228,4 +241,8 @@
 
 .footnote{
     color:red;font-size: 0.7em;
+}
+
+.dropdown-toggle::after {
+    margin-left: 5em;
 }

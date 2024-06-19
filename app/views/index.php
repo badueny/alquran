@@ -58,7 +58,7 @@
 		<div class="col-md-2 navi mb-1">
 			<label class="form-label text-light d-none d-sm-block">option</label>
 			<div class="dropdown">
-				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
+				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
 				<ul class="dropdown-menu">
 					<li><div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" id="trans">
@@ -67,11 +67,16 @@
 					<li ><div class="form-check form-switch">
 					<input class="form-check-input" type="checkbox" id="terj">
 					<label class="form-check-label" for="terj">Terjemahan</label>
-				</div></li>
+					</div></li>
+					<li><div class="form-check form-switch">
+					<input class="form-check-input" type="checkbox" id="isrt">
+					<label class="form-check-label" for="isrt">Al-Qur'an Isyarat</label>
+					</div></li>					
 					<li ><div class="form-check form-switch">
 					<input class="form-check-input" type="checkbox" id="autoscrl">
 					<label class="form-check-label" for="autoscrl">Gulir Otomatis</label>
-				</div></li>
+					</div></li>
+					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat.pdf"><i class="fas fa-download"></i></a></li>
 				</ul>
 			</div>
 		</div>				

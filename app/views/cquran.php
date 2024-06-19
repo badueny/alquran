@@ -10,7 +10,10 @@
             $fAudio = $surahIdAudio.$ayahIdAudio;
 			echo '<div class="row baris animate__animated animate__fadeIn"><div class="baris-ayat">
 			<div class="surah-number">'.$row->no_ayat.'</div>
-			<div class="surah-arabic"><p class="arab textarb'.$row->no_ayat.'" id="texta'.$row->no_ayat.'">'.$row->arabic_ayat.'</p></div>			
+			<div class="surah-arabic">
+            <p class="arab textarb'.$row->no_ayat.'" id="texta'.$row->no_ayat.'">'.$row->arabic_ayat.'</p>
+            <p class="isyarat textisrt'.$row->no_ayat.'" id="texti'.$row->no_ayat.'">'.$row->arabic_ayat.'</p>
+            </div>			
 			</div>
 			<p class="latin">'.$row->latin_ayat.'</p>
 			<p class="terjemah">'.$terjemah.'</p>
@@ -27,38 +30,4 @@
         echo '<p>Silahkan Pilih Juz/Surah/Ayat</p>';
     }
 ?>
-
-<script>
-$("#trans").on("click",function(){
-    var chk = $(this).prop("checked");
-    chk==true ? $(".latin").show() : $(".latin").hide();
-});
-$("#terj").on("click",function(){
-    var chk = $(this).prop("checked");
-    chk==true ? $(".terjemah").show() : $(".terjemah").hide();
-});
-
-$(".btn-audio").on("click",function(){  
-    $(".btn-audio").attr('disabled', true);
-    $(".plyr--audio").show();
-    playAudio($(this).data('name'),$(this).data('audio'));
-    $(".arab").attr('style','color:black');
-    $(".textarb"+$(this).data('ayah')).attr('style','color:#008900');
-});
-
-$(".btn-copy").on("click",function(){
-    var chk = $(this).data("ayah");
-    copyText('texta'+chk,chk);
-    
-});
-
-$(".btn-tafsir").on("click", function(){
-		getTafsir($(this).data("surah"),$(this).data("ayah"));		
-	});
-
-$(".btn-eng").on("click", function(){
-    getTerjemahEnglish($(this).data("surah"),$(this).data("ayah"));		
-});
-   
-
-</script>
+<script src="assets/js/list-ayah.min.js?<?=strtotime('now')?>"></script>
