@@ -12,6 +12,10 @@ $("#isrt").on("click",function(){
     chk==true ? $(".isyarat").show() : $(".isyarat").hide();
 });
 
+$("#ftrb").on("click",function(){
+    $(".btn-fitur").toggle();
+});
+
 $(".btn-audio").on("click",function(){  
     $(".btn-audio").attr('disabled', true);
     $(".plyr--audio").show();

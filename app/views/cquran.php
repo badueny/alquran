@@ -18,7 +18,7 @@
 			<p class="latin">'.$row->latin_ayat.'</p>
 			<p class="terjemah">'.$terjemah.'</p>
             '.$catatanKaki.'
-            <div class="row text-left">
+            <div class="row text-left btn-fitur">
                 <button class="btn btn-sm btn-outline-success btn-audio" data-toggle="tooltip" title="Play Audio Ayah" data-ayah="'.$row->no_ayat.'" data-audio="'.$fAudio.'" data-name="'.$row->no_ayat.'"><i class="fas fa-play"></i></i></button>
                 <button class="btn btn-sm btn-outline-success btn-copy" data-toggle="tooltip" title="Salin Ayah" data-ayah="'.$row->no_ayat.'"><i class="fas fa-copy"></i></button>
                 <button class="btn btn-sm btn-outline-success btn-tafsir" data-toggle="tooltip" title="Tafsir al-Jalalain" data-ayah="'.$row->no_ayat.'" data-surah="'.$row->surah_id.'"><i class="far fa-file-alt"></i></button>
