@@ -25,7 +25,7 @@
 <nav class="navbar sticky-top navbar-light bg-light mb-4">
   <div class="container">
  	 <div class="row col-md-12">
-       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
+       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none;font-size: 16px;"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
 		  <div class="col-md-1 navi mb-1">
 			<label for="surah" class="form-label">Juz</label>
 			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
@@ -58,7 +58,7 @@
 		<div class="col-md-2 navi mb-1">
 			<label class="form-label text-light d-none d-sm-block">option</label>
 			<div class="dropdown">
-				<a class="btn btn-success dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
+				<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
 				<ul class="dropdown-menu">
 					<li><div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" id="trans">

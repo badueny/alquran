@@ -168,7 +168,7 @@ $("#surah").on("change", function(e){
 				success:function(data)  
 				{                  					
 					if($("#surah").val()!=''){
-						var bismillah = (s!='1' && s!='9') ? "<p class='arab text-center'>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>" : '';
+						var bismillah = (s!='1' && s!='9') ? "<p class='arab text-center'>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>" : '<p class="text-center text-white" style="margin-bottom: 2rem;"></p>';
 						var infosurat = $("#surah option:selected").text();
 						infosurat = infosurat.split("(");
 						infosurat = infosurat[1].split("|");
@@ -183,7 +183,7 @@ $("#surah").on("change", function(e){
 
 	function loadingAyat()
 	{	
-		var contLoad='';
+		var contLoad='<p class="text-center text-white" style="margin-bottom: 2rem;">.....</p>';
 		for(var x=1;x<=7;x++){
 			contLoad +='<div class="row baris animate__animated animate__fadeIn" style="background: #f9f9f9;height: 150px;"></div>';
 		}
