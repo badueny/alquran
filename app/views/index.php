@@ -76,7 +76,7 @@
 					<input class="form-check-input" type="checkbox" id="autoscrl">
 					<label class="form-check-label" for="autoscrl">Gulir Otomatis</label>
 					</div></li>
-					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat.pdf"><i class="fas fa-download"></i></a></li>
+					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf"><i class="fas fa-download"></i></a></li>
 				</ul>
 			</div>
 		</div>				
