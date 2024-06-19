@@ -14,7 +14,7 @@
 	<meta content="quran,Al-Qur'an terjemah Indonesia,audio alquran,juzz,ayat,banten,lptqbanten" name="keywords" />
 	<meta content="Al-Qur'an Karim Terjemah Indonesia" name="description" />
 	<meta name="author" content="badueny@BITDEV.ID" />
-	<link rel="manifest" href="<?=base_url()?>manifest.json"> 	
+	<link rel="manifest" href="<?=base_url()?>manifest.json?<?=strtotime('now')?>"> 	
 	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512"/>
 	<link rel="stylesheet" href="assets/css/app.min.css">	
 	<link rel="stylesheet" href="assets/css/quran.min.css?<?=strtotime('now')?>">

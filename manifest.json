@@ -1,12 +1,12 @@
 {
   "background_color": "#008374",
-  "description": "Al Qur'an Karim",
+  "description": "Al-Qur'an Karim",
   "dir": "ltr",
   "display": "standalone",
-  "name": "Qur'an Karim",
+  "name": "Al-Qur'an Karim",
   "orientation": "portrait-primary",
   "scope": "/",
-  "short_name": "Qur'an Karim",
+  "short_name": "Al-Qur'an Karim",
   "start_url": "/",
   "theme_color": "#008374",
   "categories": [
