@@ -7,6 +7,13 @@ $("#terj").on("click",function(){
     chk==true ? $(".terjemah").show() : $(".terjemah").hide();
 });
 
+$(".btn-idn").on("click",function(){
+    var chk = $(this).data("ayah");
+    $("#ltn"+chk).toggle();
+    $("#idn"+chk).toggle();
+});
+
+
 $("#isrt").on("click",function(){
     var chk = $(this).prop("checked");
     chk==true ? $(".isyarat").show() : $(".isyarat").hide();
