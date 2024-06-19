@@ -13,7 +13,8 @@ $("#isrt").on("click",function(){
 });
 
 $("#ftrb").on("click",function(){
-    $(".btn-fitur").toggle();
+    var chk = $(this).prop("checked");
+    chk==true ? $(".btn-fitur").show() : $(".btn-fitur").hide();
 });
 
 $(".btn-audio").on("click",function(){  

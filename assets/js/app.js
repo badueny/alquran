@@ -160,7 +160,7 @@ $("#surah").on("change", function(e){
 			$("#trans").prop("checked", false);
 			$("#terj").prop("checked", false);
 			$("#isrt").prop("checked", false);
-			$("#ftrb").prop("checked", false);
+			$("#ftrb").prop("checked", true);
 			$("#autoscrl").prop("checked", false);
 		$.ajax({  
 				url:baseUrl+"getAyat",  
