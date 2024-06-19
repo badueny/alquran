@@ -25,7 +25,7 @@
 <nav class="navbar sticky-top navbar-light bg-light mb-4">
   <div class="container">
  	 <div class="row col-md-12">
-       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>" style="text-decoration:none;font-size: 16px;"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
+       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>?j=all&s=1&d=1&k=7" style="text-decoration:none;font-size: 16px;" class="text-success"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
 		  <div class="col-md-1 navi mb-1">
 			<label for="surah" class="form-label">Juz</label>
 			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
