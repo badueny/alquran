@@ -58,7 +58,7 @@
 		<div class="col-md-2 mb-3 navi" >
 			<label class="form-label text-light d-none d-sm-block">option</label>
 			<div class="dropdown"  style="margin-top: 6px;">
-				<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
+				<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan Lainnya</a>
 				<ul class="dropdown-menu">
 					<li><div class="form-check form-switch">
 						<input class="form-check-input" type="checkbox" id="trans">
@@ -76,7 +76,10 @@
 					<input class="form-check-input" type="checkbox" id="autoscrl">
 					<label class="form-check-label" for="autoscrl">Gulir Otomatis</label>
 					</div></li>
-					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf"><i class="fas fa-download"></i></a></li>
+					<li class="mb-2"><a href="<?=base_url()?>quran-reader" style="text-decoration:none" class="text-dark"><i class="fas fa-quran"></i> Al-Qur'an per-Halaman</a></li>
+					<li class="mb-2"><a href="<?=base_url()?>asbabun-nuzul" target="_blank" style="text-decoration:none" class="text-dark"><i class="fas fa-book"></i> Asbabun Nuzul</a></li>
+					<li class="mb-2"><a href="<?=base_url()?>tajwid" target="_blank" style="text-decoration:none" class="text-dark"><i class="fas fa-book-reader"></i> Panduan Ilmu Tajwid</a></li>
+					<li><a href="#" id="unduhisrt" style="text-decoration:none" class="text-dark" data-file="panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf"><i class="fas fa-download"></i> Unduh Panduan Isyarat</a></li>
 				</ul>
 			</div>			
 		</div>	

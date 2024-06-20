@@ -18,6 +18,24 @@ class Home extends CI_Controller {
 		$this->load->view('index');
 	}
 
+	public function tajwid()
+	{
+		$this->load->view('tajwid');
+	}
+
+	public function quranReader()
+	{
+		$this->load->view('quranflip');
+	}
+
+	public function asbabunuzul()
+	{
+		$this->load->view('asbabunuzul');
+	}
+
+
+	
+
 	function getSuratByJuzz()
 	{
 		$juzz = cleanInputGet('j');
@@ -120,4 +138,92 @@ class Home extends CI_Controller {
 		<p style="text-align:justify" id="eng'.$ayah.'">'.$tafsir->text.'</p>
 		<button class="btn btn-sm btn-outline-success" data-toggle="tooltip" id="ng'.$ayah.'" onclick="copyTextEnglish(this.id)" title="Copy English"><i class="fas fa-copy"></i> Copy</button>';
 	}
+
+	//quranPerpage
+	function getListPageQuran()
+	{
+		$tipe = cleanInputGet('t')!='' ? cleanInputGet('t') : '';
+		$filt  = cleanInputGet('f')!='' ? cleanInputGet('f') : '';
+
+		$firstPage 	= 1;
+		$lastPage  	= 1;
+		$result		='';
+		if($tipe=='juz'){
+			$getPage = DB::getDataSelectWhere('ayat','MIN(halaman_ayat) as frs, MAX(halaman_ayat) as lst',['juz_ayat' => $filt])->row();
+			$firstPage = $getPage->frs;
+			$lastPage = $getPage->lst;
+		}elseif($tipe=='surah'){
+			$pageSurah = DB::getDataSelectWhere('ayat',' MIN(halaman_ayat) as frs, MAX(halaman_ayat) as lst',['surah_id' => $filt])->row();
+			$firstPage = $pageSurah->frs;
+			$lastPage = $pageSurah->lst;
+		}if($tipe=='hal'){
+			$firstPage 	= $filt;
+			$lastPage  	= $filt;
+		}
+
+		$no=1;
+		if($filt!=''){
+			if($tipe=='juz'){
+				$result .= '<img src="'.base_url().'static/quran/mushaf/'.$filt.'.jpg" class="slide-img animate__animated animate__fadeIn">';
+			}
+			for($i=$firstPage;$i<=$lastPage;$i++){
+				$nomber = str_pad($i, 3, "0", STR_PAD_LEFT);
+				$result .= '<img src="'.base_url().'static/quran/mushaf/QK_'.$nomber.'.webp" class="slide-img animate__animated animate__fadeIn">';
+				$no++;
+			}
+		}else{					
+			$result = '<img src="'.base_url().'static/quran/mushaf/cover.jpg" class="slide-img animate__animated animate__fadeIn">';
+		}
+		$navIgasi = $no>1 ? '<div class="sliders left" onclick="side_slide(1)"><span class="fas fa-angle-left"></span></div>
+        <div class="sliders right" onclick="side_slide(-1)"><span class="fas fa-angle-right"></span></div>' : '';
+		$response['list'] = $result.$navIgasi;
+		$response['first'] = 1;
+		$response['last'] = $no;
+		echo json_encode($response);
+	}
+
+	function getListSurah()
+	{
+		
+		$listSurat = DB::getDataSelect('surah','*')->result();
+		$resultSurat ='<option value="">Pilih Surah</option>';
+		$no=1;
+		$nosurat='';
+		foreach($listSurat as $rsurah){ 
+			$resultSurat .= '<option value="'.$rsurah->id_surah.'">'.$rsurah->id_surah.'. '.$rsurah->arabic_surah.' ('.trim($rsurah->latin_surah).' - '.$rsurah->translation_surah.' | '.trim($rsurah->location_surah).' | '.$rsurah->num_ayah_surah.'ayah)</option>';
+			$no++;
+		}
+		echo $resultSurat;
+	}
+
+	//=====
+
+	function convertWebpToPng()
+	{
+		$listJuzz = DB::querySql("SELECT halaman_ayat, juz_ayat FROM `tbl_ayat` GROUP BY juz_ayat ORDER BY `juz_ayat` ASC;")->result();
+		/*(foreach($listJuzz as $row){
+			$juzz = $row->juz_ayat;
+			$star = $row->halaman_ayat;
+			$nextJuzz = $juzz<30 ? ($juzz+1) : '';
+			$lastPage = $juzz<30 ? DB::querySql("SELECT halaman_ayat FROM `tbl_ayat` WHERE juz_ayat='$nextJuzz' GROUP BY juz_ayat ORDER BY `juz_ayat` ASC;")->row('halaman_ayat') : 604;
+			$end = $juzz<30 ($lastPage-1) : $lastPage;
+			$pathToDir = 'static/quran/png/juzz_'.$juzz;
+			file_exists($pathToDir) ? '' : mkdir($pathToDir);
+			for($i=$star;$i<=$end;$i++){
+				$nomber = str_pad($i, 3, "0", STR_PAD_LEFT);
+				$fname = $nomber;
+				$im = imagecreatefromwebp('static/quran/mushaf/QK_'.$fname.'.webp');
+				imagepng($im, $pathToDir.'/Hal_'.$fname.'.png',9);
+				imagedestroy($im);
+			}
+		}*/
+		foreach($listJuzz as $row){
+			$juzz = $row->juz_ayat;
+			$fname = $juzz.'.jpg';
+			$source = 'static/quran/png/juzz_'.$juzz.'/cover.jpg';
+			$target1 = 'static/quran/mushaf/'.$fname;
+			copy($source,$target1);			
+		}
+	}
+
 }

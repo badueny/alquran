@@ -9,3 +9,11 @@ $route['getSuratByJuzz'] = 'home/getSuratByJuzz';
 $route['getNomorAyatByJuzzSurat'] = 'home/getNomorAyatByJuzzSurat';
 $route['getTafsir'] = 'home/getTafsir';
 $route['getTerjemahEnglish'] = 'home/getTerjemahEnglish';
+$route['tajwid'] = 'home/tajwid';
+$route['asbabun-nuzul'] = 'home/asbabunuzul';
+
+$route['quran-reader'] = 'home/quranReader';
+$route['getListSurah'] = 'home/getListSurah';
+$route['getListPageQuran'] = 'home/getListPageQuran';
+
+
