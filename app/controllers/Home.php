@@ -5,29 +5,35 @@ class Home extends CI_Controller {
 
 	public function __construct()
 	{
-			parent::__construct();
+		parent::__construct();
+		date_default_timezone_set("Asia/Jakarta");
 	}
 
+	//Main_Page
 	public function index()
 	{
 		$this->load->view('index');
 	}
 
+	//Main_Page
 	public function quran()
 	{
 		$this->load->view('index');
 	}
 
+	//Tajwid_View
 	public function tajwid()
 	{
 		$this->load->view('tajwid');
 	}
 
+	//Read_Qur'an_Per_Page_View
 	public function quranReader()
 	{
 		$this->load->view('quranflip');
 	}
 
+	//Asbabun_Nuzul_View
 	public function asbabunuzul()
 	{
 		$this->load->view('asbabunuzul');
@@ -35,7 +41,7 @@ class Home extends CI_Controller {
 
 
 	
-
+	//List_Surah_By_Juzz
 	function getSuratByJuzz()
 	{
 		$juzz = cleanInputGet('j');
@@ -61,6 +67,7 @@ class Home extends CI_Controller {
 		echo json_encode($result);
 	}
 
+	//List_Nomor_Ayah
 	function getNomorAyatByJuzzSurat()
 	{
 		$surahId = cleanInputGet('s');
@@ -89,6 +96,7 @@ class Home extends CI_Controller {
 		echo json_encode($result);
 	}
 
+	//List_Ayah_View
 	function getAyat()
 	{
 		$juzz = cleanInputGet('j');
@@ -117,6 +125,7 @@ class Home extends CI_Controller {
 		}
 	}	
 
+	//Get_Tafsir_By_Ayah
 	function getTafsir()
 	{
 		$surah = cleanInputGet('s');
@@ -128,6 +137,7 @@ class Home extends CI_Controller {
 		<button class="btn btn-sm btn-outline-success btn-copyTafsir" data-toggle="tooltip" id="'.$ayah.'" onclick="copyTextTafsir(this.id)" title="Salin Tafsir"><i class="fas fa-copy"></i> Copy Tafsir</button>';
 	}
 
+	//Get_English_Translation_By_Ayah
 	function getTerjemahEnglish()
 	{
 		$surah = cleanInputGet('s');
@@ -139,7 +149,7 @@ class Home extends CI_Controller {
 		<button class="btn btn-sm btn-outline-success" data-toggle="tooltip" id="ng'.$ayah.'" onclick="copyTextEnglish(this.id)" title="Copy English"><i class="fas fa-copy"></i> Copy</button>';
 	}
 
-	//quranPerpage
+	//List_Qur'an_per-Page
 	function getListPageQuran()
 	{
 		$tipe = cleanInputGet('t')!='' ? cleanInputGet('t') : '';
@@ -182,6 +192,7 @@ class Home extends CI_Controller {
 		echo json_encode($response);
 	}
 
+	//List_All_Surah
 	function getListSurah()
 	{
 		
@@ -195,35 +206,5 @@ class Home extends CI_Controller {
 		}
 		echo $resultSurat;
 	}
-
 	//=====
-
-	function convertWebpToPng()
-	{
-		$listJuzz = DB::querySql("SELECT halaman_ayat, juz_ayat FROM `tbl_ayat` GROUP BY juz_ayat ORDER BY `juz_ayat` ASC;")->result();
-		/*(foreach($listJuzz as $row){
-			$juzz = $row->juz_ayat;
-			$star = $row->halaman_ayat;
-			$nextJuzz = $juzz<30 ? ($juzz+1) : '';
-			$lastPage = $juzz<30 ? DB::querySql("SELECT halaman_ayat FROM `tbl_ayat` WHERE juz_ayat='$nextJuzz' GROUP BY juz_ayat ORDER BY `juz_ayat` ASC;")->row('halaman_ayat') : 604;
-			$end = $juzz<30 ($lastPage-1) : $lastPage;
-			$pathToDir = 'static/quran/png/juzz_'.$juzz;
-			file_exists($pathToDir) ? '' : mkdir($pathToDir);
-			for($i=$star;$i<=$end;$i++){
-				$nomber = str_pad($i, 3, "0", STR_PAD_LEFT);
-				$fname = $nomber;
-				$im = imagecreatefromwebp('static/quran/mushaf/QK_'.$fname.'.webp');
-				imagepng($im, $pathToDir.'/Hal_'.$fname.'.png',9);
-				imagedestroy($im);
-			}
-		}*/
-		foreach($listJuzz as $row){
-			$juzz = $row->juz_ayat;
-			$fname = $juzz.'.jpg';
-			$source = 'static/quran/png/juzz_'.$juzz.'/cover.jpg';
-			$target1 = 'static/quran/mushaf/'.$fname;
-			copy($source,$target1);			
-		}
-	}
-
 }

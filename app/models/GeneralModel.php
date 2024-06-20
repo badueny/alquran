@@ -4,56 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class GeneralModel extends CI_Model
 {        
-    //Migration===
-    function createDatabase($dbName)
-    {
-        $this->load->dbforge();        
-        return $this->dbforge->create_database($dbName,TRUE);
-    }
-
-    function dropDatabase($dbName)
-    {
-        $this->load->dbforge();
-        return $this->dbforge->drop_database($dbName);
-    }
-
-    function createTable($tableName,$arrayField,$keyId)
-    {
-        $this->load->dbforge();
-        return $this->dbforge->add_field($arrayField)->add_key($keyId, true)->create_table($tableName,TRUE);
-    }
-
-    function renameTable($oldTable,$newTable)
-    {
-        $this->load->dbforge();
-        return $this->dbforge->rename_table($oldTable,$newTable);
-    }
-
-    function dropTable($tableName)
-    {
-        $this->load->dbforge();
-        return $this->dbforge->drop_table($tableName,TRUE);
-    }
-
-    function isExistTable($tableName)
-    {
-        return $this->db->query("SHOW TABLES LIKE '$tableName'")->num_rows();
-    }
-    //==========
-    
-    function dbInfo()
-    {
-        //$version = $this->db->version();
-        //$platform = $this->db->platform();
-        return $this->db->call_function('get_client_info');//'Flatform: '.$flatform.'<br>'.'Version: '.$version;
-    }
-    //QuerySql
-    function querySql($query)
-    {
-        return $this->db->query($query);
-    }
-    //======
-
     //Datatable
     private function searchDataTable($tableName,$orderTable,$columnOrder,$searchPola,$customFilter)
     {
