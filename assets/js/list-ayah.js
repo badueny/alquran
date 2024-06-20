@@ -34,7 +34,7 @@ $(".btn-audio").on("click",function(){
     $(".btn-audio").attr('disabled', true);
     $(".plyr--audio").show();
     playAudio($(this).data('name'),$(this).data('audio'));
-    $(".arab").attr('style','color:black');
+    $(".arab").attr('style','color:inherit');
     $(".textarb"+$(this).data('ayah')).attr('style','color:#008900');
 });
 

@@ -27,7 +27,7 @@
 	<div class="row g-2">
 		<div class="col-md-2 navbar-brand"><a href="<?=base_url()?>?j=all&s=1&d=1&k=7" style="text-decoration:none;font-size: 16px;" class="text-success"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an</a></div>
 		<div class="col-md-1 navi" style="flex-direction: column;">
-				<label for="juzz" class="form-label">Juz</label>
+				<label for="juzz" class="form-label text-dark">Juz</label>
 				<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
 				<select class="form-select" name="juzz" id="juzz">				
 					<?php  				
@@ -41,11 +41,11 @@
 				</select>
 		</div>
 		<div class="col-md-4 navi" style="flex-direction: column;">
-			<label for="surah" class="form-label">Surah</label>
+			<label for="surah" class="form-label text-dark">Surah</label>
 			<select class="form-select" name="surah" id="surah"></select>
 		</div>
 		<div class="col-md-2 navi" style="flex-direction: column;">
-			<label for="surah" class="form-label">Dari ayah ke ayah</label>
+			<label for="surah" class="form-label text-dark">Dari ayah ke ayah</label>
 			<div class="input-group mb-2">
 				<select class="form-control" id="dari"></select>
 				<span class="input-group-text" style="height: 27px;padding: 2px;">s.d</span>
@@ -76,10 +76,6 @@
 					<input class="form-check-input" type="checkbox" id="autoscrl">
 					<label class="form-check-label" for="autoscrl">Gulir Otomatis</label>
 					</div></li>
-					<!--li ><div class="form-check form-switch">
-					<input class="form-check-input" type="checkbox" id="ftrb">
-					<label class="form-check-label" for="ftrb">Fitur</label>
-					</div></li-->
 					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf"><i class="fas fa-download"></i></a></li>
 				</ul>
 			</div>			
@@ -87,7 +83,11 @@
 	</div>	
 	<div class="form-check form-switch ftrb">
 		<input class="form-check-input" type="checkbox" id="ftrb">
-		<label class="form-check-label" for="ftrb">Tombol Fitur</label>
+		<label class="form-check-label text-dark" for="ftrb">Tombol Fitur</label>
+	</div>
+	<div class="form-check form-switch mode">
+		<input class="form-check-input" type="checkbox" id="mode">
+		<label class="form-check-label text-dark" for="mode">Mode Gelap</label>
 	</div>
 	<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>	
 	<script>var defaulturis = '?j='+$("#ajuzz").val();</script>
@@ -113,10 +113,10 @@
   <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"></h5>
+        <h5 class="modal-title text-dark"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body"></div>
+      <div class="modal-body text-dark"></div>
     </div>
   </div>
 </div>

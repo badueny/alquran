@@ -18,7 +18,7 @@ var playerQs = new Plyr('#player');
 
 	playerQs.on('ended', (event) => {
 		$(".plyr").hide();
-		$("#app .arab").attr("style","color:black");
+		$("#app .arab").attr("style","color:inherit");
 		$("#app .btn-audio").attr("disabled",false);
 	});
 	
@@ -27,6 +27,12 @@ $("#unduhisrt").on("click", function(e){
 	var fname = $(this).data('file');
 	downloadFile(baseUrl+'static/panduan/'+fname, fname)
 });
+
+$("#mode").on("click", function(e){
+	var element = document.body;
+  	element.classList.toggle("dark-mode");
+});
+
 
 function downloadFile(url, name) {
 	fetch(url)

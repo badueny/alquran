@@ -9,7 +9,7 @@
             $terjemah = $footnots!='' ? str_replace($footnots.')', '<sup class="footnote">'.$footnots.')</sup>',$row->terjemah_ayat) : $row->terjemah_ayat;
             $fAudio = $surahIdAudio.$ayahIdAudio;
 			echo '<div class="row baris animate__animated animate__fadeIn"><div class="baris-ayat">
-			<div class="surah-number">'.$row->no_ayat.'</div>
+			<div class="surah-number text-dark">'.$row->no_ayat.'</div>
 			<div class="surah-arabic">
             <p class="arab textarb'.$row->no_ayat.'" id="texta'.$row->no_ayat.'">'.$row->arabic_ayat.'</p>
             <p class="isyarat textisrt'.$row->no_ayat.'" id="texti'.$row->no_ayat.'">'.$row->arabic_ayat.'</p>
