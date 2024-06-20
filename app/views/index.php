@@ -18,33 +18,41 @@
 	<link rel="icon" href="<?=base_url()?>assets/images/icons/al-quran-512.png" sizes="512x512"/>
 	<link rel="stylesheet" href="assets/css/app.min.css">	
 	<link rel="stylesheet" href="assets/css/quran.min.css?<?=strtotime('now')?>">
-	<script src="assets/js/script.min.js"></script>
+	<script src="assets/js/app.bundle.js"></script>
 	<script>var defaulturis = "", baseUrl = "<?=base_url()?>";</script>
+	<style>
+		@media only screen and (min-width: 600px) {
+			.select2  {
+				width: 100% !important;
+			}
+			
+		}
+	</style>
 </head>
 <body id="home">
-<nav class="navbar sticky-top navbar-light bg-light mb-4">
+<nav class="sticky-top bg-light">
   <div class="container">
- 	 <div class="row col-md-12">
-       <div class="col-md-2 navbar-brand"><a href="<?=base_url()?>?j=all&s=1&d=1&k=7" style="text-decoration:none;font-size: 16px;" class="text-success"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
-		  <div class="col-md-1 navi mb-1">
-			<label for="surah" class="form-label">Juz</label>
-			<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
-			<select class="form-select" name="juzz" id="juzz">				
-				<?php  				
-				$selectedja = (cleanInputGet('j')=='all' OR cleanInputGet('j')=='') ? 'selected' : '';
-				echo '<option value="all" '.$selectedja.'>Juz</option>';
-				for($noj=1;$noj<=30;$noj++){ 					
-					$selectedj = cleanInputGet('j')==$noj ? 'selected' : '';
-					$selectedj = cleanInputGet('j')=='all' ? '' : '';
-					echo '<option value="'.$noj.'" '.$selectedj.'>'.$noj.'</option>';
-				}  ?>
-			</select>
+	<div class="row g-2">
+		<div class="col-md-2 navbar-brand mb-3"><a href="<?=base_url()?>?j=all&s=1&d=1&k=7" style="text-decoration:none;font-size: 16px;" class="text-success"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
+		<div class="col-md-1 navi" style="flex-direction: column;">
+				<label for="juzz" class="form-label">Juz</label>
+				<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
+				<select class="form-select" name="juzz" id="juzz">				
+					<?php  				
+					$selectedja = (cleanInputGet('j')=='all' OR cleanInputGet('j')=='') ? 'selected' : '';
+					echo '<option value="all" '.$selectedja.'>Semua</option>';
+					for($noj=1;$noj<=30;$noj++){ 					
+						$selectedj = cleanInputGet('j')==$noj ? 'selected' : '';
+						$selectedj = cleanInputGet('j')=='all' ? '' : '';
+						echo '<option value="'.$noj.'" '.$selectedj.'>'.$noj.'</option>';
+					}  ?>
+				</select>
 		</div>
-		<div class="col-md-4 navi mb-1">
+		<div class="col-md-4 navi" style="flex-direction: column;">
 			<label for="surah" class="form-label">Surah</label>
-			<select class="form-select arab-text" name="surah" id="surah" style="width:100%"></select>
+			<select class="form-select" name="surah" id="surah"></select>
 		</div>
-		<div class="col-md-2 navi mb-1">
+		<div class="col-md-2 navi" style="flex-direction: column;">
 			<label for="surah" class="form-label">Dari ayah ke ayah</label>
 			<div class="input-group mb-2">
 				<select class="form-control" id="dari"></select>
@@ -54,8 +62,8 @@
 				<input type="hidden" value="<?=cleanInputGet('d')?>" id="adari">
 				<input type="hidden" value="<?=cleanInputGet('s')?>" id="asurah">
 			</div>
-		</div>		
-		<div class="col-md-2 navi mb-1">
+		</div>
+		<div class="col-md-2 mb-3 navi" >
 			<label class="form-label text-light d-none d-sm-block">option</label>
 			<div class="dropdown">
 				<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
@@ -83,12 +91,12 @@
 					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf"><i class="fas fa-download"></i></a></li>
 				</ul>
 			</div>
-		</div>				
-		<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>		
-	</div>
+		</div>			
+	</div>	
+	<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>	
 	<script>var defaulturis = '?j='+$("#ajuzz").val();</script>
   </div>
-</nav>
+</nav> 
 <p id="infoNav"></p>
 <div class="container" id="app"></div>
 <div class="auto-scroll">
