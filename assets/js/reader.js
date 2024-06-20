@@ -98,3 +98,14 @@ $('#imgQ .right').hide();
     }
     img[indexValue-1].style.display = "block";
   }
+
+    document.onkeydown = function(e) {
+        switch (e.keyCode) {
+            case 37:
+                side_slide(1)
+                break;
+            case 39:
+                side_slide(-1)
+                break;
+        }
+    };
