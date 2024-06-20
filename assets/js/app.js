@@ -193,7 +193,7 @@ $("#surah").on("change", function(e){
 	{	
 		var contLoad='<p class="text-center text-white" style="margin-bottom: 2rem;">.....</p>';
 		for(var x=1;x<=7;x++){
-			contLoad +='<div class="row baris animate__animated animate__fadeIn" style="background: #f9f9f9;height: 150px;"></div>';
+			contLoad +='<div class="row baris animate__animated animate__fadeIn" style="background: inherit;height: 150px;"></div>';
 		}
 		$('#app').html(contLoad);
 	}
