@@ -11,7 +11,8 @@ Al-Qur'an Web Base PWA App
 7. Audio per Ayat
 8. Auto Scroll
 9. Accessibility Menu
-10. Read Quran Per-Page (soon)
+10. Dark Mode
+11. Read Quran Per-Page (soon)
 
 ### Filtering
 Juzz, Surah, Range Ayah
