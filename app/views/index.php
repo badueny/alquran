@@ -20,20 +20,12 @@
 	<link rel="stylesheet" href="assets/css/quran.min.css?<?=strtotime('now')?>">
 	<script src="assets/js/app.bundle.js"></script>
 	<script>var defaulturis = "", baseUrl = "<?=base_url()?>";</script>
-	<style>
-		@media only screen and (min-width: 600px) {
-			.select2  {
-				width: 100% !important;
-			}
-			
-		}
-	</style>
 </head>
 <body id="home">
 <nav class="sticky-top bg-light">
   <div class="container">
 	<div class="row g-2">
-		<div class="col-md-2 navbar-brand mb-3"><a href="<?=base_url()?>?j=all&s=1&d=1&k=7" style="text-decoration:none;font-size: 16px;" class="text-success"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an Karim</a></div>
+		<div class="col-md-2 navbar-brand"><a href="<?=base_url()?>?j=all&s=1&d=1&k=7" style="text-decoration:none;font-size: 16px;" class="text-success"><img src="assets/images/icons/al-quran-512.png" width="45px"> Al-Qur'an</a></div>
 		<div class="col-md-1 navi" style="flex-direction: column;">
 				<label for="juzz" class="form-label">Juz</label>
 				<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
@@ -56,7 +48,7 @@
 			<label for="surah" class="form-label">Dari ayah ke ayah</label>
 			<div class="input-group mb-2">
 				<select class="form-control" id="dari"></select>
-				<span class="input-group-text" style="height: 27px;">s.d</span>
+				<span class="input-group-text" style="height: 27px;padding: 2px;">s.d</span>
 				<select class="form-control" id="ke"></select>
 				<input type="hidden" value="<?=cleanInputGet('k')?>" id="ake">
 				<input type="hidden" value="<?=cleanInputGet('d')?>" id="adari">
@@ -65,7 +57,7 @@
 		</div>
 		<div class="col-md-2 mb-3 navi" >
 			<label class="form-label text-light d-none d-sm-block">option</label>
-			<div class="dropdown">
+			<div class="dropdown"  style="margin-top: 6px;">
 				<a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" style="height: 28px;line-height: 13px;width: 80%;text-align: left;" data-bs-toggle="dropdown" aria-expanded="false">Pilihan</a>
 				<ul class="dropdown-menu">
 					<li><div class="form-check form-switch">
@@ -84,15 +76,19 @@
 					<input class="form-check-input" type="checkbox" id="autoscrl">
 					<label class="form-check-label" for="autoscrl">Gulir Otomatis</label>
 					</div></li>
-					<li ><div class="form-check form-switch">
+					<!--li ><div class="form-check form-switch">
 					<input class="form-check-input" type="checkbox" id="ftrb">
 					<label class="form-check-label" for="ftrb">Fitur</label>
-					</div></li>
+					</div></li-->
 					<li>Unduh Panduan Isyarat <a href="#" id="unduhisrt" style="float:right;" data-file="panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf"><i class="fas fa-download"></i></a></li>
 				</ul>
-			</div>
-		</div>			
+			</div>			
+		</div>	
 	</div>	
+	<div class="form-check form-switch ftrb">
+		<input class="form-check-input" type="checkbox" id="ftrb">
+		<label class="form-check-label" for="ftrb">Tombol Fitur</label>
+	</div>
 	<button class="btn btn-outline-secondary btn-menu"><i class="fas fa-bars"></i></button>	
 	<script>var defaulturis = '?j='+$("#ajuzz").val();</script>
   </div>

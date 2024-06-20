@@ -252,7 +252,7 @@ function copyTextEnglish(elmtID) {
 	$(".modal-body").remove(textArea);
 }
 
-function getTafsir(s,a)
+function getTafsir(s,a,q)
 	{
 		$.ajax({  
 			url:baseUrl+"getTafsir",  
@@ -262,14 +262,14 @@ function getTafsir(s,a)
 			success:function(data)  
 			{    
 				$(".modal-title").html('Tafsir al-Jalalain');
-				$(".modal-body").html(data);
+				$(".modal-body").html('<p class="arab" style="font-size: 16px;font-weight: 550;">'+q+'</p>'+data);
 				$("#tafsirModal").modal({ backdrop: "static", keyboard: !1 }), 				
 				$("#tafsirModal").modal("show");
 			}
 		});
 	}
 
-	function getTerjemahEnglish(s,a)
+	function getTerjemahEnglish(s,a,q)
 	{
 		$.ajax({  
 			url:baseUrl+"getTerjemahEnglish",  
@@ -279,7 +279,7 @@ function getTafsir(s,a)
 			success:function(data)  
 			{    
 				$(".modal-title").html('Terjemah English <font size="-1"><i>*Sahih International</i></font>');
-				$(".modal-body").html(data);
+				$(".modal-body").html('<p class="arab" style="font-size: 16px;font-weight: 550;">'+q+'</p>'+data);
 				$("#tafsirModal").modal({ backdrop: "static", keyboard: !1 }), 				
 				$("#tafsirModal").modal("show");
 			}

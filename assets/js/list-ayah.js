@@ -11,6 +11,12 @@ $(".btn-idn").on("click",function(){
     var chk = $(this).data("ayah");
     $("#ltn"+chk).toggle();
     $("#idn"+chk).toggle();
+    $(".note"+chk).toggle();
+});
+
+$(".btn-isrt").on("click",function(){
+    var chk = $(this).data("ayah");
+    $("#texti"+chk).toggle();
 });
 
 
@@ -39,9 +45,9 @@ $(".btn-copy").on("click",function(){
 });
 
 $(".btn-tafsir").on("click", function(){
-		getTafsir($(this).data("surah"),$(this).data("ayah"));		
+		getTafsir($(this).data("surah"),$(this).data("ayah"),$(this).data("ayat"));		
 	});
 
 $(".btn-eng").on("click", function(){
-    getTerjemahEnglish($(this).data("surah"),$(this).data("ayah"));		
+    getTerjemahEnglish($(this).data("surah"),$(this).data("ayah"),$(this).data("ayat"));		
 });

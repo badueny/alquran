@@ -200,39 +200,27 @@ nav{
     padding: 0.1rem 0.03rem;
 }
 
-.btn-copy{
-    width: 25px;
-    margin-left: 8px;
-    margin-bottom: 5px;
-    padding: 0.1rem 0.03rem;
-}
-
 .btn-tafsir{
     width: 68px;
     margin-left: 8px;
     margin-bottom: 5px;
     padding: 0.1rem 0.03rem;
 }
-.btn-eng{
+
+.btn-eng, .btn-isrt, .btn-idn, .btn-copy{
     width: 25px;
     margin-left: 8px;
     margin-bottom: 5px;
     padding: 0.1rem 0.03rem;
 }
 
-.btn-idn{
-    width: 25px;
-    margin-left: 8px;
-    margin-bottom: 5px;
-    padding: 0.1rem 0.03rem;
-}
-
-.btn-menu{
-    width: 40px;
-    height: 40px;
+.btn-menu {
+    width: 30px;
+    height: 30px;
     position: absolute;
     top: 20px;
     right: 20px;
+    padding: 3px;
 }
 
 #infoCopy{
@@ -261,4 +249,35 @@ nav{
     margin-top: -2px;
     position: absolute;
     top: 50%;
+}
+
+.form-label{  
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: .1rem;
+}
+
+.ftrb{
+    position: absolute;
+    right: 10%;
+    font-size: 12px;
+    top: 38px;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+    .select2  {
+        width: 100% !important;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .ftrb {
+        position: absolute;
+        right: 22%;
+        font-size: 12px;
+        top: 27px;
+    }    
 }
