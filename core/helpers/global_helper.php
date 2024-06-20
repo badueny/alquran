@@ -532,7 +532,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
             }else{
                 $ext = explode(".",$nama_berkas);
                 $data = file_get_contents($pathBerkas);  
-                force_download(substr($nama_berkas,0,10).'-'.time().'.'.$ext[1], $data);
+                force_download(guidv4().'.'.$ext[1], $data);
             }        
         }
     }

@@ -16,4 +16,4 @@ $route['quran-reader'] = 'home/quranReader';
 $route['getListSurah'] = 'home/getListSurah';
 $route['getListPageQuran'] = 'home/getListPageQuran';
 
-
+$route['unduh-isyarat'] = 'home/unduhIsyarat';

@@ -207,4 +207,9 @@ class Home extends CI_Controller {
 		echo $resultSurat;
 	}
 	//=====
+
+	function unduhIsyarat()
+	{
+		unduhFile('panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf','static/panduan/');
+	}
 }
