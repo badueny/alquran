@@ -76,36 +76,39 @@ $('#imgQ .right').hide();
      showImg(indexValue += e);        
   }
   
+  var jumSlider = 1;
   function showImg(e){
-    if(e==1){
-        $('#imgQ .right').hide();
-    }else{
-        $('#imgQ .right').show();
-    }
-    var lstImg = $("#tipe").val()=='juz' ? jumIndex : (jumIndex-1);
-    if(e==lstImg){
-        $('#imgQ .left').hide();
-    }else{
-        $('#imgQ .left').show();
-    }
+        if(e==1){
+            $('#imgQ .right').hide();        
+        }else{
+            $('#imgQ .right').show();
+        }
+        var lstImg = $("#tipe").val()=='juz' ? jumIndex : (jumIndex-1);
+        if(e==lstImg){
+            $('#imgQ .left').hide();
+        }else{
+            $('#imgQ .left').show();
+        }
 
-    var i;
-    const img = document.querySelectorAll('#imgQ .slide-img');
-    if(e > img.length){indexValue = 1}
-    if(e < 1){indexValue = img.length}
-    for(i = 0; i < img.length; i++){
-        img[i].style.display = "none";
-    }
-    img[indexValue-1].style.display = "block";
+        var i;
+        const img = document.querySelectorAll('#imgQ .slide-img');
+        if(e > img.length){indexValue = 1}
+        if(e < 1){indexValue = img.length}
+        for(i = 0; i < img.length; i++){
+            img[i].style.display = "none";
+        }
+        img[indexValue-1].style.display = "block";
   }
 
-    document.onkeydown = function(e) {
-        switch (e.keyCode) {
-            case 37:
-                side_slide(1)
-                break;
-            case 39:
-                side_slide(-1)
-                break;
+    $(document).keydown(function(ar) {
+        var keyb = ar.originalEvent.key;
+        if(keyb=='ArrowRight' && indexValue>1){           
+            side_slide(-1);
+        }    
+        var lstImg = $("#tipe").val()=='juz' ? jumIndex : (jumIndex-1);  
+        if(keyb=='ArrowLeft' && indexValue<lstImg){
+            side_slide(1);
         }
-    };
+    });
+
+    
