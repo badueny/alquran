@@ -29,7 +29,7 @@
 		<div class="col-md-1 navi" style="flex-direction: column;">
 				<label for="juzz" class="form-label text-dark">Juz</label>
 				<input type="hidden" value="<?=cleanInputGet('j')=='' ? 'all' : cleanInputGet('j')?>" id="ajuzz">
-				<select class="form-select" name="juzz" id="juzz">				
+				<select class="form-select text-dark" name="juzz" id="juzz">				
 					<?php  				
 					$selectedja = (cleanInputGet('j')=='all' OR cleanInputGet('j')=='') ? 'selected' : '';
 					echo '<option value="all" '.$selectedja.'>Semua</option>';
@@ -42,14 +42,14 @@
 		</div>
 		<div class="col-md-4 navi" style="flex-direction: column;">
 			<label for="surah" class="form-label text-dark">Surah</label>
-			<select class="form-select" name="surah" id="surah"></select>
+			<select class="form-select text-dark" name="surah" id="surah"></select>
 		</div>
 		<div class="col-md-2 navi" style="flex-direction: column;">
 			<label for="surah" class="form-label text-dark">Dari ayah ke ayah</label>
 			<div class="input-group mb-2">
-				<select class="form-control" id="dari"></select>
-				<span class="input-group-text" style="height: 27px;padding: 2px;">s.d</span>
-				<select class="form-control" id="ke"></select>
+				<select class="form-control text-dark" id="dari"></select>
+				<span class="input-group-text text-dark" style="height: 27px;padding: 2px;">s.d</span>
+				<select class="form-control text-dark" id="ke"></select>
 				<input type="hidden" value="<?=cleanInputGet('k')?>" id="ake">
 				<input type="hidden" value="<?=cleanInputGet('d')?>" id="adari">
 				<input type="hidden" value="<?=cleanInputGet('s')?>" id="asurah">

@@ -314,3 +314,7 @@ nav{
         font-size: 24px;
     }
 }
+
+.select2-results__option {
+    color: #282727 !important;
+}
