@@ -60,7 +60,7 @@ $config['cache_query_string'] = FALSE;
 $config['encryption_key'] = 'J[gqj#Z~7g73';
 
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'digdayas';
+$config['sess_cookie_name'] = 'qrns';
 $config['sess_samesite'] = 'Lax';
 $config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
@@ -77,9 +77,9 @@ $config['cookie_samesite'] 	= 'Lax';
 $config['standardize_newlines'] = FALSE;
 $config['global_xss_filtering'] = FALSE;
 
-$config['csrf_protection'] = FALSE;
-$config['csrf_token_name'] = 'csrftn';
-$config['csrf_cookie_name'] = 'csrfcn';
+$config['csrf_protection'] = TRUE;
+$config['csrf_token_name'] = 'qrnscsrftn';
+$config['csrf_cookie_name'] = 'qrnscsrfcn';
 $config['csrf_expire'] = 7200;
 $config['csrf_regenerate'] = TRUE;
 $config['csrf_exclude_uris'] = array();

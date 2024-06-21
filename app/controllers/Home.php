@@ -7,6 +7,7 @@ class Home extends CI_Controller {
 	{
 		parent::__construct();
 		date_default_timezone_set("Asia/Jakarta");
+		setSession('token',guidv4());
 	}
 
 	//Main_Page
