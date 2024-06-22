@@ -58,4 +58,4 @@ Lajnah Pentashihan Mushaf Al-Qur'an Kementrian Agama Republik Indonesia
 
 ~~If you want to donate, please donate to your nearest neighbor in need.
 
-With :heart: From Indonesia to the World.
+With :heart: From Indonesia for everyone.
