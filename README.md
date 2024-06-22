@@ -1,6 +1,8 @@
 # Al-Qur'an Karim 
 Al-Qur'an Web Base PWA App
 
+![screenshot](https://lptqbanten.or.id/storage/2024/06/promo-quran-online.jpg)
+
 ## Fitur
 1. Al-Qur'an (arabic)
 2. Transliterasi Latin
