@@ -13,7 +13,8 @@ Al-Qur'an Web Base PWA App
 9. Accessibility Menu
 10. Dark Mode
 11. Read Quran Per-Page
-12. And Others (soon)
+12. e-Mushaf (Al-Qur'an Flip Version)
+13. And Others (soon)
 
 ### Filtering
 Juzz, Surah, Range Ayah
