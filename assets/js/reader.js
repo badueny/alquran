@@ -5,12 +5,18 @@ $(".btn-menu").on("click", function(e){
 $("#filts").select2();
 $("#tipe").select2();
 $("#tipe").on("change", function(){ 
-    var val = $(this).val();     
-    if(val!='ayat'){
+    var val = $(this).val();  
+    if(val=='ayat'){
+        window.location = baseUrl;
+    }
+    
+    if(val=='emushaf'){
+        window.location = baseUrl+'emushaf';
+    }
+
+    if(val!='ayat' || val!='emushaf'){
         $("#imgQ").html('<img src="'+baseUrl+'static/quran/mushaf/cover.jpg" class="slide-img animate__animated animate__fadeIn">');             
         val=='juz' ? listJuzz() : (val=='surah' ? listSurah() : (val=='hal' ? listHalaman() : $("#filts").html('<option value="">Pilih Filter Dahulu</option>').trigger("change.select2")));
-    }else{
-        window.location = baseUrl;
     }
 });
 

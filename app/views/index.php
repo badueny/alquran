@@ -76,6 +76,7 @@
 					<input class="form-check-input" type="checkbox" id="autoscrl">
 					<label class="form-check-label" for="autoscrl">Gulir Otomatis</label>
 					</div></li>
+					<li class="mb-2"><a href="<?=base_url()?>emushaf" style="text-decoration:none" class="text-dark"><i class="fas fa-quran"></i> e-Mushaf Al-Qur'an</a></li>
 					<li class="mb-2"><a href="<?=base_url()?>quran-reader" style="text-decoration:none" class="text-dark"><i class="fas fa-quran"></i> Al-Qur'an per-Halaman</a></li>
 					<li class="mb-2"><a href="<?=base_url()?>asbabun-nuzul" target="_blank" style="text-decoration:none" class="text-dark"><i class="fas fa-book"></i> Asbabun Nuzul</a></li>
 					<li class="mb-2"><a href="<?=base_url()?>tajwid" target="_blank" style="text-decoration:none" class="text-dark"><i class="fas fa-book-reader"></i> Panduan Ilmu Tajwid</a></li>

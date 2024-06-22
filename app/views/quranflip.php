@@ -26,6 +26,7 @@
                 <option value="surah">Surah</option>
                 <option value="hal">Halaman</option>
                 <option value="ayat">Per-Ayat</option>
+                <option value="emushaf">e-Mushaf</option>
             </select>
 		</div>
         <div class="col-md-5 navi mb-3" style="flex-direction: column;">

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="id">
+<head>
+	<title>e-Mushaf Al-Qur'an Karim</title>
+	<meta name="viewport" content="width = 1050, user-scalable = no" />
+	<link rel="icon" type="image/png" href="pics/al-quran-512.png" />
+	<script type="text/javascript" src="extras/jquery.min.1.7.js"></script>
+	<script type="text/javascript" src="extras/jquery-ui-1.8.20.custom.min.js"></script>
+	<script type="text/javascript" src="extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="lib/hash.js"></script>
+</head>
+<body>
+<div id="canvas">
+	<div class="home-nav"><a href="/" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="width: 14px;margin-right: 0.23em;"><path d="M280.4 148.3L96 300.1V464a16 16 0 0 0 16 16l112.1-.3a16 16 0 0 0 15.9-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.6a16 16 0 0 0 16 16.1L464 480a16 16 0 0 0 16-16V300L295.7 148.3a12.2 12.2 0 0 0 -15.3 0zM571.6 251.5L488 182.6V44.1a12 12 0 0 0 -12-12h-56a12 12 0 0 0 -12 12v72.6L318.5 43a48 48 0 0 0 -61 0L4.3 251.5a12 12 0 0 0 -1.6 16.9l25.5 31A12 12 0 0 0 45.2 301l235.2-193.7a12.2 12.2 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0 -1.7-16.9z"></path></svg> BERANDA</a></div>
+	<div class="zoom-icon zoom-icon-in"></div>
+	<div class="magazine-viewport">
+		<img src="pics/quran.png" class="quran-logo" style="display:none">
+		<img src="pics/arrow-key.png" class="info-key"  style="display:none">	
+		<div class="container">
+			<div class="magazine"></div>		
+		</div>
+		<div class="bottom">		
+			<div class="pagination" style="display:none">			
+				<a href="#" class="last"> << </a>
+				<a href="#" class="next"> < </a>
+				<a>Juz: <select class="juz"><option value="0">Juz</option><option value="1">1</option><option value="22">2</option><option value="42">3</option><option value="62">4</option><option value="82">5</option><option value="102">6</option><option value="122">7</option><option value="142">8</option><option value="162">9</option><option value="182">10</option><option value="202">11</option><option value="222">12</option><option value="242">13</option><option value="262">14</option><option value="282">15</option><option value="302">16</option><option value="322">17</option><option value="342">18</option><option value="362">19</option><option value="382">20</option><option value="401">21</option><option value="422">22</option><option value="441">23</option><option value="462">24</option><option value="482">25</option><option value="502">26</option><option value="522">27</option><option value="542">28</option><option value="562">29</option><option value="582">30</option></select></a>
+				<a>Surah:<select class="surah"><option value="0">Surah</option><option value="1">Al-Fatihah</option><option value="2">Al-Baqarah</option><option value="50">Ali 'Imran</option><option value="77">An-Nisa'</option><option value="106">Al-Ma'idah</option><option value="128">Al-An'am</option><option value="151">Al-A'raf</option><option value="177">Al-Anfal</option><option value="187">At-Taubah</option><option value="208">Yunus</option><option value="221">Hud</option><option value="235">Yusuf</option><option value="249">Ar-Ra'd</option><option value="255">Ibrahim</option><option value="262">Al-Hijr</option><option value="267">An-Nahl</option><option value="282">Al-Isra'</option><option value="293">Al-Kahf</option><option value="305">Maryam</option><option value="312">Taha</option><option value="322">Al-Anbiya'</option><option value="332">Al-Hajj</option><option value="342">Al-Mu'minun</option><option value="350">An-Nur</option><option value="359">Al-Furqan</option><option value="367">Asy-Syu'ara'</option><option value="377">An-Naml</option><option value="385">Al-Qasas</option><option value="396">Al-'Ankabut</option><option value="404">Ar-Rum</option><option value="411">Luqman</option><option value="415">As-Sajdah</option><option value="418">Al-Ahzab</option><option value="428">Saba'</option><option value="434">Fatir</option><option value="440">Yasin</option><option value="446">As-Saffat</option><option value="453">Sad</option><option value="458">Az-Zumar</option><option value="467">Gafir</option><option value="477">Fussilat</option><option value="483">Asy-Syura</option><option value="489">Az-Zukhruf</option><option value="496">Ad-Dukhan</option><option value="499">Al-Jasiyah</option><option value="502">Al-Ahqaf</option><option value="507">Muhammad</option><option value="511">Al-Fath</option><option value="515">Al-Hujurat</option><option value="518">Qaf</option><option value="520">Az-Zariyat</option><option value="523">At-Tur</option><option value="526">An-Najm</option><option value="528">Al-Qamar</option><option value="531">Ar-Rahman</option><option value="534">Al-Waqi'ah</option><option value="537">Al-Hadid</option><option value="542">Al-Mujadalah</option><option value="545">Al-Hasyr</option><option value="549">Al-Mumtahanah</option><option value="551">As-Saff</option><option value="553">Al-Jumu'ah</option><option value="554">Al-Munafiqun</option><option value="556">At-Tagabun</option><option value="558">At-Talaq</option><option value="560">At-tahrim</option><option value="562">Al-Mulk</option><option value="564">Al-Qalam</option><option value="566">Al-Haqqah</option><option value="568">Al-Ma'arij</option><option value="570">Nuh</option><option value="572">Al-Jinn</option><option value="574">Al-Muzzammil</option><option value="575">Al-Muddassir</option><option value="577">Al-Qiyamah</option><option value="578">Al-Insan</option><option value="580">Al-Mursalat</option><option value="582">An-Naba'</option><option value="583">An-Nazi'at</option><option value="585">'Abasa</option><option value="586">At-Takwir</option><option value="587">Al-Infitar</option><option value="587">Al-Mutaffifin</option><option value="589">Al-Insyiqaq</option><option value="590">Al-Buruj</option><option value="591">At-Tariq</option><option value="591">Al-A'la</option><option value="592">Al-Gasyiyah</option><option value="593">Al-Fajr</option><option value="594">Al-Balad</option><option value="595">Asy-Syams</option><option value="595">Al-Lail</option><option value="596">Ad-Duha</option><option value="596">Asy-Syarh</option><option value="597">At-Tin</option><option value="597">Al-'Alaq</option><option value="598">Al-Qadr</option><option value="598">Al-Bayyinah</option><option value="599">Az-Zalzalah</option><option value="599">Al-'Adiyat</option><option value="600">Al-Qari'ah</option><option value="600">At-Takasur</option><option value="601">Al-'Asr</option><option value="601">Al-Humazah</option><option value="601">Al-Fil</option><option value="602">Quraisy</option><option value="602">Al-Ma'un</option><option value="602">Al-Kausar</option><option value="603">Al-Kafirun</option><option value="603">An-Nasr</option><option value="603">Al-Lahab</option><option value="604">Al-Ikhlas</option><option value="604">Al-Falaq</option><option value="604">An-Nas</option></select></a>
+				<a>Hal: <input type="number" min="0" max="604" step="2" class="hal"></a>
+				<a href="#" class="prev"> > </a>
+				<a href="#" class="first"> >> </a>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="js/cfg.min.js?v2"></script>
+</body>
+</html>

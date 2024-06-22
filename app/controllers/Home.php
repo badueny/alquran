@@ -31,6 +31,11 @@ class Home extends CI_Controller {
 	//Read_Qur'an_Per_Page_View
 	public function quranReader()
 	{
+		/*if(getBrowser()=='Mobile Browser'){
+			$this->load->view('quranflip');
+		}else{
+			redirect(base_url('emushaf'));
+		}*/
 		$this->load->view('quranflip');
 	}
 
@@ -212,5 +217,6 @@ class Home extends CI_Controller {
 	function unduhIsyarat()
 	{
 		unduhFile('panduan-membaca-mushaf-al-quran-isyarat_compressed.pdf','static/panduan/');
-	}
+	}	
+	
 }
