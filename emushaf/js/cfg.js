@@ -512,7 +512,14 @@ $('.zoom-icon').bind('mouseover', function() {
 $('#canvas').hide();
 
 
-
+window.addEventListener("wheel", event => {
+    const delta = Math.sign(event.deltaY);
+    if(delta>0){
+        $('.magazine').turn('previous');
+    }else{
+        $('.magazine').turn('next');
+    }
+});
 
 var elem = document.documentElement;
 
