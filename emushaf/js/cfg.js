@@ -1,4 +1,5 @@
 
+
 function loadApp() {
 
     $('#canvas').fadeIn(1000);
@@ -68,7 +69,7 @@ function loadApp() {
                    getSelectSurah(page);
                    getSelectJuz(page);
                    //$(".juz").val(page);
-                   
+                   play();
                    
                    // Show and hide navigation buttons
 
@@ -453,6 +454,11 @@ function loadApp() {
 
 }
 
+
+function play() {
+    var audio = new Audio('pics/flip.mp3');
+    audio.play();
+  }
 // Load the HTML4 version if there's not CSS transform
 yepnope({
     test : Modernizr.csstransforms,
