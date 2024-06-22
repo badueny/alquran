@@ -56,3 +56,4 @@ Copyright Allah SWT
 
 ~~If you want to donate, please donate to your nearest neighbor in need.
 
+From Indonesia to the World.
