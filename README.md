@@ -27,14 +27,14 @@ Clone this Repository
 
 Create Database and Import quran.sql From static/quran/sql
 
+#### Database
 Collocation Database: utf8_general_ci
 
 ENGINE 	: InnoDB
 
 CHARSET : utf8mb3
 
-
-### Database Config:
+#### Database Config:
 app/config/config.php
 
 $config['dba'] = 'DB_NAME';
@@ -45,6 +45,8 @@ $config['dbp'] = 'DB_PASSWORD';
 
 $config['dbs'] = 'DB_HOST';
 
+#### RUN IN PHP
+PHP: 7.2 - 8.0
 
 ### LIVE APP
 [VISIT LIVE APP](https://quran.lptqbanten.or.id/)
