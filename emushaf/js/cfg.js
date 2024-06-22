@@ -464,7 +464,7 @@ yepnope({
     test : Modernizr.csstransforms,
     yep: ['lib/turn.min.js'],
     nope: ['lib/turn.html4.min.js', 'css/jquery.ui.html4.css'],
-    both: ['lib/zoom.min.js', 'css/jquery.ui.css', 'js/magazine.js?v2', 'css/magazine.min.css'],
+    both: ['lib/zoom.min.js', 'css/jquery.ui.css', 'js/magazine.min.js?v3', 'css/magazine.min.css?v3'],
     complete: loadApp
  });
 
