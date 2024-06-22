@@ -58,6 +58,6 @@ Lajnah Pentashihan Mushaf Al-Qur'an Kementrian Agama Republik Indonesia
 
 ### Copyright Allah SWT
 
-~~If you want to donate, please donate to your nearest neighbor in need.
+~~If you want to donate, please donate to those in need, especially your closest neighbors or relatives.
 
 With :heart: From Indonesia for everyone.
