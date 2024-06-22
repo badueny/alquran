@@ -537,3 +537,9 @@ function closeFullscreen() {
    document.msExitFullscreen();
  }
 }
+
+$(document).ready(function () { 
+    $(document).bind("contextmenu", function (e) { 
+        return false; 
+    }); 
+}); 
